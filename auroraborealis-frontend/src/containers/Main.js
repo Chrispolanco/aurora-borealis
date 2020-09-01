@@ -6,15 +6,15 @@ class Main extends Component {
 
     render() {
         <div> 
-            <Login/> 
+            <Login loginUser={this.props.loginUser}/> 
         </div>
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    return(
-        loginUser: user=> dispatch({type: "LOGIN_USER", user})
-    )
+    return{
+        loginUser: user => dispatch({type: "LOGIN_USER", user})
+    }
 }
 
-export default connect(null, )(Main)
+export default connect(null, mapDispatchToProps)(Main)
