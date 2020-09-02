@@ -1,2 +1,0 @@
-class ContextsController < ApplicationController
-end
