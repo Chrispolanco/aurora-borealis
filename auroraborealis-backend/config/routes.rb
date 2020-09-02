@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contexts
   resources :posts
   resources :users
   post '/login' => "sessions#create"
