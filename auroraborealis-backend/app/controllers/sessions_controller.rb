@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
                 last_name: user.last_name, 
                 token: token
             }
-            render json: {userObj: user}
+            render json: {user: userObj}
         else 
             render json: { error: "User not authenticated" }
         end 
