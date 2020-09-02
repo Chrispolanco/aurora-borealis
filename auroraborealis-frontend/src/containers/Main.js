@@ -8,7 +8,7 @@ class Main extends Component {
     render() {
         return (
             <div> 
-                {this.props.error ? <p>{this.props.loginError}</p> : null}
+                {this.props.error ? <p>{this.props.error}</p> : null}
                 <Login loginUser={this.props.loginUser}/> 
             </div>
         )
