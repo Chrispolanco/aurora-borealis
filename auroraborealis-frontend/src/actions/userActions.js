@@ -10,6 +10,12 @@ export const loginUser = (user) => {
             body: JSON.stringify({user: user})
         })
         .then(res => res.json())    
-        .then(data => dispatch({ type: "LOGIN_USER", user: data }))
+        .then(data => {
+            if(data.error) {
+                dispatch({ type: "LOGIN_ERROR", error: data.error })
+            } else {
+                dispatch({ type: "LOGIN_USER", user: data })
+            }
+        })
     }
 }

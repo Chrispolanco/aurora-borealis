@@ -8,10 +8,17 @@ class Main extends Component {
     render() {
         return (
             <div> 
+                {this.props.error ? <p>{this.props.loginError}</p> : null}
                 <Login loginUser={this.props.loginUser}/> 
             </div>
         )
     }
 }
 
-export default connect(null, {loginUser})(Main)
+const mapStateToProps = state => {
+    return {
+        error: state.loginError
+    }
+}
+
+export default connect(mapStateToProps, {loginUser})(Main)
