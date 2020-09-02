@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
 
+    def new 
+        user = User.new
+        render json: UserSerializer.new(user).to_seriallized_json
+    end 
+
     def create
         user = User.find_by(:email => params[:user][:email])
 

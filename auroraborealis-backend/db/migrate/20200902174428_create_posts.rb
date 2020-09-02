@@ -4,10 +4,9 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :image
       t.string :description
       t.string :votes
-      t.string :latitude
-      t.string :longitude
-      t.string :date
-      t.string :time
+      t.float :latitude
+      t.float :longitude
+      t.datetime :datetime
 
       t.timestamps
     end
