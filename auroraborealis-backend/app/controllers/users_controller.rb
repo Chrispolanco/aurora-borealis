@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     def index
         users = User.all 
         render json: UserSerializer.new(users).to_serialized_json
-    end 
+    end
     
     def show 
         user = User.find(params[:id])
@@ -37,10 +37,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:username, :name, :password, :won_adventure_1, :won_adventure_2, :won_adventure_3, :won_adventure_4, :id)
+        params.require(:user).permit(:username, :email, :first_name, :last_name, :password_digest)
     end
-
-end
-
 
 end

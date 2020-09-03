@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
     def new 
         user = User.new
-        render json: UserSerializer.new(user).to_seriallized_json
+        render json: UserSerializer.new(user).to_serialized_json
     end 
 
     def create
