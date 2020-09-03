@@ -11,9 +11,9 @@ User.create([
 ]); 
 
 Comment.create([
-    {context: "The moon was especially bright this night"}
+    {context: "The moon was especially bright this night", user_id: 1, post_id: 1}
 ]); 
 
 Post.create([
-    {image: "google.com", description: "moon on 12/12/1990", votes:10, latitude: 12.0, longitude: 12.0, datetime: 1990-12-12}
+    {image: "google.com", description: "moon on 12/12/1990", votes:10, latitude: 12.0, longitude: 12.0, date: "1990-12-12", user_id: 1}
 ]); 

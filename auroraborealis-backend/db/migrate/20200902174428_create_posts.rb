@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :votes
       t.float :latitude
       t.float :longitude
-      t.datetime :datetime
+      t.date :date
       t.belongs_to :user, foreign_key: true
 
 
