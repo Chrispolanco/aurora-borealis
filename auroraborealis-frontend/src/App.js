@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Main from './containers/Main'; 
 import { connect } from 'react-redux'; 
 
-function App() {
-  return (
-    <div className="App">
-      <Main /> 
-    </div>
-  );
+class App extends Component() {
+
+  componentDidMount() {
+    
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Main /> 
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (App);
