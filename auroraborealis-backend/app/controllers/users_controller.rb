@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
 
-    def new 
-        user = User.new 
-        render json: UserSerializer.new(user).to_serialized_json
-    end 
-
     def index
         users = User.all 
         render json: UserSerializer.new(users).to_serialized_json
@@ -16,11 +11,15 @@ class UsersController < ApplicationController
     end 
 
     def create 
-        user = User.create(user_params) 
+        user = User.new(user_params) 
         if user && user.save 
             session[:user_id] = user.id 
             render json: UserSerializer.new(user).to_serialized_json
-        end 
+        else 
+            response = {
+                error: user.errors.full_messages.to_sentence 
+            }
+            render json: user.errors, status: 400
     end 
 
     def update 
