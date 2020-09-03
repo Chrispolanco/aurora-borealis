@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+
     def new 
         post = Post.new 
         render json: PostSerializer.new(post).to_serialized_json
@@ -7,6 +8,7 @@ class PostsController < ApplicationController
 
     def index
         posts = Post.all 
+        
         render json: PostSerializer.new(posts).to_serialized_json
     end
     
