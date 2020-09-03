@@ -15,5 +15,5 @@ Comment.create([
 ]); 
 
 Post.create([
-    {image: "google.com", description: "moon on 12/12/1990", votes:10, latitude: 12.0, longitude: 12.0, datetime: 12/12/1990}
+    {image: "google.com", description: "moon on 12/12/1990", votes:10, latitude: 12.0, longitude: 12.0, datetime: 1990-12-12}
 ]); 

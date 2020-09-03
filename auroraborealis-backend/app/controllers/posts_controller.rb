@@ -33,9 +33,9 @@ class PostsController < ApplicationController
 
     private 
 
-    def post_params
-        params.require(:post).permit(:image, :description, :votes, :latitude, :longitude, :datetime)
-    end
+        def post_params
+            params.require(:post).permit(:image, :description, :votes, :latitude, :longitude, :datetime)
+        end
 
 end
 

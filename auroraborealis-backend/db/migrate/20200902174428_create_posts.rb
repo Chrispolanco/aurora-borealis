@@ -3,10 +3,12 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.string :image
       t.string :description
-      t.string :votes
+      t.integer :votes
       t.float :latitude
       t.float :longitude
       t.datetime :datetime
+      t.belongs_to :user, foreign_key: true
+
 
       t.timestamps
     end
