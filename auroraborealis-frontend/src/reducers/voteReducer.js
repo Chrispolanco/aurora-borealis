@@ -3,7 +3,7 @@ export default (state = [], action) => {
 
         case 'UPVOTE_COMMENT':
             return state.map((comment) => 
-                quote.id === action.commentId ? {...comment, votes: (comment.votes += 1)} : quote
+                comment.id === action.commentId ? {...comment, votes: (comment.votes += 1)} : comment
             )
 
         case 'DOWNVOTE_COMMENT': 
