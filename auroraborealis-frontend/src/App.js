@@ -6,14 +6,12 @@ import { connect } from 'react-redux';
 class App extends Component() {
 
   componentDidMount() {
-    
+    this.props.loggedIn() 
   }
 
   render() {
     return (
-      <div className="App">
-        <Main /> 
-      </div>
+        this.props.loggedIn ? <LoggedInHomePage loggedInUser={this.props.loggedIn} /> : <generalHomePage/> 
     );
   }
 }
