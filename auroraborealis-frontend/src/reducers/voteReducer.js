@@ -1,4 +1,4 @@
-export default (state = [], action) => {
+const userReducer = (state = [], action) => {
     switch(action.type) {
 
         case 'UPVOTE_COMMENT':
@@ -15,3 +15,5 @@ export default (state = [], action) => {
             return state; 
     }
 }
+
+export default userReducer
