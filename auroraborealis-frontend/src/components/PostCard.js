@@ -6,7 +6,7 @@ const PostCard = props => {
             <span> 
                 {props.description}
             </span>
-            <button>
+            <button onClick={() => props.delete(props.post.id)}>
                 Delete
             </button>
         </div>

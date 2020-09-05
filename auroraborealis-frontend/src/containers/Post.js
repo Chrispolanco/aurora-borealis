@@ -13,10 +13,8 @@ class Posts extends Component {
         this.props.dispatch()
     }
 
-    render() {
-        return(
-            console.log("test")
-        )
+    renderPosts = () => {
+        return this.props.posts.map(post => <PostCard delete={this.props.delete} key ={post.id} post={post} />)  
     }
 
 }
