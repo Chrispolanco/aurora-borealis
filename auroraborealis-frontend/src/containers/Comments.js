@@ -34,3 +34,11 @@ class Comments extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return{
+        comments: state.comments
+    }
+}
+
+export default connect(mapStateToProps)(Comments); 
