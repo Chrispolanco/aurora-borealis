@@ -11,7 +11,7 @@ class PostForm extends Component {
         date: '' 
     }
 
-    handleOnChange = event => {
+    handleOnChange(event) {
         const {value, name} = event.target; 
         this.setState({
             [name]: value 
@@ -20,7 +20,7 @@ class PostForm extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault(); 
-        const post = {...this.state, id:uuide()}; 
+        const post = {...this.state, id:uuid()}; 
         this.props.addPost(post)
         this.setState({
             image: '', 
@@ -33,21 +33,21 @@ class PostForm extends Component {
 
     render() {
         <div className="container"> 
-            <form className="form" onSubmit={this.handleOnSubmit}> 
+            <form className="form" onSubmit={(event) => this.handleOnSubmit}> 
                 <label htmlFor="image" class="innerForm">Image</label>
-                <input type="text" name="image" onChange={this.handleOnChange} value={this.state.image}/> 
+                <input type="text" name="image" onChange={(event) => this.handleOnChange(event)} value={this.state.image}/> 
                 <br/> 
                 <label htmlFor="description" class="innerForm">Description</label>
-                <input type="text" name="description" onChange={this.handleOnChange} value={this.state.description}/> 
+                <input type="text" name="description" onChange={(event) => this.handleOnChange(event)} value={this.state.description}/> 
                 <br/> 
                 <label htmlFor="latitude" class="innerForm">Latitude</label>
-                <input type="float" name="latitude" onChange={this.handleOnChange} value={this.state.latitude}/> 
+                <input type="float" name="latitude" onChange={(event) => this.handleOnChange(event)} value={this.state.latitude}/> 
                 <br/> 
                 <label htmlFor="longitude" class="innerForm">Longitude</label>
-                <input type="float" name="longitude" onChange={this.handleOnChange} value={this.state.longitude}/> 
+                <input type="float" name="longitude" onChange={(event) => this.handleOnChange(event)} value={this.state.longitude}/> 
                 <br/> 
                 <label htmlFor="date" class="innerForm">Date</label>
-                <input type="date" name="date" onChange={this.handleOnChange} value={this.state.date}/> 
+                <input type="date" name="date" onChange={(event) => this.handleOnChange(event)} value={this.state.date}/> 
                 <br/> 
             <button type="submit" className="button">Submit</button>
             </form>

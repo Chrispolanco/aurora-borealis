@@ -1,16 +1,22 @@
 import React, { Component } from 'react'; 
 
-const PostCard = props => {
-    return( 
-        <div> 
-            <span> 
-                {props.description}
-            </span>
-            <button onClick={() => props.delete(props.post.id)}>
-                Delete
-            </button>
-        </div>
-    )
-}
+class PostCard extends Component {
+
+    handleClick = () => {
+        this.props.deletePost(this.props.post.id)
+    }
+
+    render() {
+        return( 
+            <div> 
+                <li> 
+                    {this.props.post.description}
+                    <button onClick={this.handleClick}>Delete</button>
+                </li>
+            </div>
+        )
+    }
+}; 
+
 
 export default PostCard; 
