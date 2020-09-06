@@ -60,9 +60,3 @@ export default function combinedReducer(
             return state; 
     }
 }
-
-
-t.text "context"
-t.bigint "post_id"
-t.bigint "user_id"
-
