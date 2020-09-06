@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Main from './containers/Main'; 
-import { connect } from 'react-redux'; 
+import PostContainer from './containers/PostContainer'; 
 
 class App extends Component {
   render() {
     return(
       <div className="App"> 
-        <Main/>
+        <PostContainer/>
       </div>
     )
   }
+}; 
 
-}
+export default App
