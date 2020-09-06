@@ -9,10 +9,8 @@ class PostCard extends Component {
     render() {
         return( 
             <div> 
-                <li> 
-                    {this.props.post.description}
-                    <button onClick={this.handleClick}>Delete</button>
-                </li>
+                <li> {this.props.post.description}</li>
+                <button onClick={this.handleClick}>Delete</button>
             </div>
         )
     }
