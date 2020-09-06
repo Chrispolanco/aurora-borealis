@@ -1,5 +1,5 @@
-import cuid from 'cuid'; 
-export const cuidFn = cuid; 
+import cuid from 'cuid';
+export const cuidFn = cuid;
 
 export default function testReducer(
     state = {
@@ -13,7 +13,7 @@ export default function testReducer(
 
         case 'ADD_USER': 
         const user = {
-            id: cuidFn(), 
+            id: cuidFn(),
             username: action.username, 
             email: action.email, 
             first_name: action.first_name, 
