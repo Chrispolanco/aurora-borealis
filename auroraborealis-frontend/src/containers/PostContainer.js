@@ -9,9 +9,8 @@ class PostsContainer extends Component {
         return(
             <div>
                 <PostForm addPost={this.props.addPost} userId={this.props.user.id} /> 
-                {this.props.posts.map((post) => (
-                    <PostCard posts={this.props.posts} userId = {this.props.user.id} deletePost={this.props.deletePosts} /> 
-                ))}    
+                <PostCard posts={this.props.posts} userId = {this.props.user.id} deletePost={this.props.deletePosts} /> 
+                ))    
             </div> 
         )
     }
