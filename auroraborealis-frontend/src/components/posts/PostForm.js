@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import uuid from 'uuid'; 
 import { connect } from 'react-redux'; 
 
-class PostForm extends Component {
+class PostFrom extends Component {
     state = {
         image: '', 
         description: '', 
@@ -11,16 +11,16 @@ class PostForm extends Component {
         date: '' 
     }
 
-    handleOnChange(event) {
-        const {value, name} = event.target; 
+    handleOnChange(e) {
+        const {value, name} = e.target; 
         this.setState({
             [name]: value 
         })
     }
 
-    handleOnSubmit = event => {
-        event.preventDefault(); 
-        const post = {...this.state, id:uuid()}; 
+    handleOnSubmit = (e) => {
+        e.preventDefault(); 
+        const post = {...this.state, id:uuid(), userId: this.props.userId}; 
         this.props.addPost(post)
         this.setState({
             image: '', 
@@ -33,7 +33,7 @@ class PostForm extends Component {
 
     render() {
         <div className="container"> 
-            <form className="form" onSubmit={(event) => this.handleOnSubmit}> 
+            <form className="form" onSubmit={this.handleOnSubmit}> 
                 <label htmlFor="image" class="innerForm">Image</label>
                 <input type="text" name="image" onChange={(event) => this.handleOnChange(event)} value={this.state.image}/> 
                 <br/> 

@@ -1,16 +1,16 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'; 
 import PostForm from './PostForm'; 
-import Post from './Post'; 
+import PostCard from './PostCard'; 
 
 class PostsContainer extends Component {
 
     render() {
         return(
             <div>
-                <PostForm addPost={this.props.addPost} /> 
+                <PostForm addPost={this.props.addPost} userId={this.props.user.id} /> 
                 {this.props.posts.map((post) => (
-                    <PostCard deletePost={this.props.deletePost} key={post.id} post={post} /> 
+                    <PostCard posts={this.props.posts} userId = {this.props.user.id} deletePost={this.props.deletePosts} /> 
                 ))}    
             </div> 
         )
@@ -18,7 +18,8 @@ class PostsContainer extends Component {
 
 }
 
-const mapStateToProps =({ posts }) => ({ posts })
+const mapStateToProps = ( posts ) => ({ posts })
+
 
 const mapDispatchToProps = dispatch => ({
     addPost: post => dispatch({ type: "ADD_POST", post }), 
