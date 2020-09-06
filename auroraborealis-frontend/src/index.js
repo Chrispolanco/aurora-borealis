@@ -6,12 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'; 
 import thunk from 'redux-thunk'; 
 import { Provider } from 'react-redux';
-import userReducer from './reducers/userReducer'; 
 import { BrowserRouter as Router } from 'react-router-dom'; 
 import testReducer from './reducers/testReducer'; 
 
 const reducer = combineReducers({
-  userReducer
   testReducer
 })
 
