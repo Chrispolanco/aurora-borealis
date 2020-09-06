@@ -1,7 +1,7 @@
 import cuid from 'cuid'; 
 export const cuidFn = cuid; 
 
-export default function combinedReducer(
+export default function testReducer(
     state = {
         users: [], 
         posts: [],

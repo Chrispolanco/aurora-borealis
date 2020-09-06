@@ -8,9 +8,11 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import userReducer from './reducers/userReducer'; 
 import { BrowserRouter as Router } from 'react-router-dom'; 
+import testReducer from './reducers/testReducer'; 
 
 const reducer = combineReducers({
   userReducer
+  testReducer
 })
 
 const store = createStore(reducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
