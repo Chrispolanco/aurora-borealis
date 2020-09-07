@@ -6,7 +6,7 @@ function currentUserReducer(state=null, action) {
             return action.user 
 
         case 'REMOVE_USER': 
-            return null 
+            return state
         
         default: 
             return state; 
