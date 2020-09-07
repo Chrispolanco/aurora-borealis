@@ -39,7 +39,7 @@ export default function testReducer(
             }; 
             return {...state, posts: [...state.posts, post]}; 
 
-        case 'DELETE_REVIEW': 
+        case 'DELETE_POST': 
             const posts = state.posts.filter(post => post.id !== action.id); 
             return {...state, posts}
 
@@ -52,7 +52,7 @@ export default function testReducer(
             }; 
             return {...state, comments: [...state.post.comments, comment]};; 
 
-        case 'DELETE_REVIEW':  
+        case 'DELETE_COMMENT':  
             const comments = state.post.comments.filter(comment => comment.id !== action.id); 
             return {...state, comments}
 
