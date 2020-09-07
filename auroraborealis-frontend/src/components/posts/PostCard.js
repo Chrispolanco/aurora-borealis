@@ -10,7 +10,7 @@ class PostCard extends Component {
         const { post } = this.props; 
         return( 
             <div> 
-                <li> {post.description}</li>
+                <li> {post}</li>
                 <button onClick={this.handleClick}>Delete</button>
             </div>
         )
