@@ -18,8 +18,11 @@ class PostFrom extends Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault(); 
-        const post = {...this.state, userId: this.props.userId}; 
-        this.props.addPost(post)
+        // const post = {...this.state, userId: this.props.userId}; 
+        this.props.addPost({
+            description: this.state.description, 
+            userId: this.props.user_id, 
+        })
         this.setState({
             image: '', 
             description: '', 

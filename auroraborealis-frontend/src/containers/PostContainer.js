@@ -8,8 +8,8 @@ class PostsContainer extends Component {
     render() {
         return(
             <div>
-                <PostForm addPost={this.props.addPost} userId={this.props.user.id} /> 
-                <PostCard posts={this.props.posts} userId = {this.props.user.id} deletePost={this.props.deletePosts} /> 
+                <PostForm addPost={this.props.addPost} userId={this.props.user_id} /> 
+                <PostCard posts={this.props.posts} userId = {this.props.user_id} deletePost={this.props.deletePosts} /> 
                 ))    
             </div> 
         )

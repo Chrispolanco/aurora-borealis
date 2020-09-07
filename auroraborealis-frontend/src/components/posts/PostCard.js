@@ -1,15 +1,16 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 
 class PostCard extends Component {
 
-    handleClick = () => {
+    handleClick = (e) => {
         this.props.deletePost(this.props.post.id)
     }
 
     render() {
+        const { post } = this.props; 
         return( 
             <div> 
-                <li> {this.props.post.description}</li>
+                <li> {post.description}</li>
                 <button onClick={this.handleClick}>Delete</button>
             </div>
         )
