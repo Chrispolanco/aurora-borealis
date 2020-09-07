@@ -1,4 +1,4 @@
-export const currentUser = user => {
+export const SetcurrentUser = user => {
     return {
         type: "CURRENT_USER", 
         user 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import PostContainer from './containers/PostContainer'; 
+import { currentUser } from './actions/currentUser'; 
+import { connect } from 'react-redux';
 
 class App extends Component {
 
@@ -17,4 +19,4 @@ class App extends Component {
   }
 }; 
 
-export default App
+export default connect(null, {currentUser})(App); 
