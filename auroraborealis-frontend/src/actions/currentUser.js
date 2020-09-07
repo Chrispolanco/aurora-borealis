@@ -5,13 +5,13 @@ export const currentUser = user => {
     }
 }
 
-export const blankCurrentUser = () => {
+export const removeCurrentUser = () => {
     return {
-        type: "Blank_USER"
+        type: "REMOVE_USER"
     }
 }
 
-export const signup = (credentials) => {
+export const login = (credentials) => {
     return(dispatch) => {
         return fetch('http://localhost:3001/login',{
             credentials: "include", 
@@ -27,6 +27,39 @@ export const signup = (credentials) => {
                 alert(user.error)
             } else{
                 dispatch({ type: "CURRENT_USER", user: user})
+            }
+        })
+        .catch(console.log)
+    }
+}
+
+export const logout = (event) => {
+    return dispatch => {
+        dispatch(removeCurrentUser())
+        return fetch('http://localhost:3001/logout', {
+            credentials: "include", 
+            method: "DELETE"
+        })
+        .then(response => response.json())
+        .then(json => alert(json.notice))
+    }
+}
+
+export const currentUser = () => {
+    return dispatch => {
+        return('http://localhost:3001/get_current_user', {
+            credentials: "include", 
+            method: "GET", 
+            headers: {
+                "Content-Type": "application/json"
+            }, 
+        })
+        .then(response => response.json())
+        .then(user => {
+            if (user.error) {
+                alert(user.error)
+            } else {
+                dispatch(currentUser(user))
             }
         })
         .catch(console.log)
