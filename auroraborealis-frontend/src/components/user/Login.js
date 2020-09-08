@@ -8,15 +8,15 @@ class Login extends Component {
         password: ""
     }
 
-    handleOnChange = event => {
+    handleOnChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value 
         })
     }
 
-    handleOnSubmit = event => {
+    handleOnSubmit = (event) => {
         event.preventDefault()
-        this.props.loginUser({ email: this.state.email, password: this.state.password})
+        this.props.login({ email: this.state.email, password: this.state.password})
 
         this.setState({
             email: "", 
@@ -43,4 +43,4 @@ class Login extends Component {
     }
 }
 
-export default Login; 
+export default connect (null, { login })(Login)
