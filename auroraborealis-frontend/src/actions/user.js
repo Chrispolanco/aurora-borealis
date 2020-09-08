@@ -14,7 +14,7 @@ export const removeCurrentUser = () => {
 export const login = (credentials) => {
     return(dispatch) => {
         dispatch(removeCurrentUser())
-        return fetch('http://localhost:3001/login',{
+        return fetch("http://localhost:3001/login",{
             credentials: "include", 
             method: "POST", 
             headers: {
@@ -22,7 +22,7 @@ export const login = (credentials) => {
             }, 
             body: JSON.stringify(credentials)
         })
-        .then(response => {return response.json()})
+        .then(response => response.json())
         .then(user => {
             if(user.error){
                 alert(user.error)
@@ -34,10 +34,10 @@ export const login = (credentials) => {
     }
 }
 
-export const logout = (event) => {
+export const logout = () => {
     return dispatch => {
         dispatch(removeCurrentUser())
-        return fetch('http://localhost:3001/logout', {
+        return fetch("http://localhost:3001/logout", {
             credentials: "include", 
             method: "DELETE"
         })
@@ -48,7 +48,7 @@ export const logout = (event) => {
 
 export const currentUser = () => {
     return dispatch => {
-        return fetch('http://localhost:3001/get_current_user', {
+        return fetch("http://localhost:3001/get_current_user", {
             credentials: "include", 
             method: "GET", 
             headers: {
@@ -61,6 +61,31 @@ export const currentUser = () => {
                 alert(user.error)
             } else {
                 dispatch(setCurrentUser(user))
+            }
+        })
+        .catch(console.log)
+    }
+}
+
+export const signup = (credentials) => {
+    return dispatch => {
+        const newUser = {
+            user: credentials
+        }
+        return fetch("http://localhost:3001/signup", {
+            credentials: "include", 
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json"
+            }, 
+            body: JSON.stringify(newUser)
+        })
+        .then(response => response.json())
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
+            } else {
+                dispatch(setCurrentUser(response))
             }
         })
         .catch(console.log)
