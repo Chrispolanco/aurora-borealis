@@ -1,4 +1,4 @@
-export const SetcurrentUser = user => {
+export const setCurrentUser = user => {
     return {
         type: "CURRENT_USER", 
         user 
@@ -13,6 +13,7 @@ export const removeCurrentUser = () => {
 
 export const login = (credentials) => {
     return(dispatch) => {
+        dispatch(removeCurrentUser())
         return fetch('http://localhost:3001/login',{
             credentials: "include", 
             method: "POST", 
@@ -47,7 +48,7 @@ export const logout = (event) => {
 
 export const currentUser = () => {
     return dispatch => {
-        return('http://localhost:3001/get_current_user', {
+        return fetch('http://localhost:3001/get_current_user', {
             credentials: "include", 
             method: "GET", 
             headers: {
@@ -59,7 +60,7 @@ export const currentUser = () => {
             if (user.error) {
                 alert(user.error)
             } else {
-                dispatch(currentUser(user))
+                dispatch(setCurrentUser(user))
             }
         })
         .catch(console.log)

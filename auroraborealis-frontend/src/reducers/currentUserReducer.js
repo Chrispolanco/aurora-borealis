@@ -1,5 +1,3 @@
-import { currentUser } from "../actions/currentUser";
-
 function currentUserReducer(state=null, action) {
     switch (action.type) {
         case 'CURRENT_USER': 
