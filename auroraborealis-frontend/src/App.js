@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import PostContainer from './containers/PostContainer'; 
+// import PostContainer from './containers/PostContainer'; 
 import { currentUser } from './actions/user'; 
-import { setCurrentUser } from './actions/user'; 
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -12,14 +11,20 @@ class App extends Component {
 }
 
   render() {
+    const { userLoggedIn } = this.props
     return(
       <div className="App"> 
-        <PostContainer/>
+        {userLoggedIn ? "Logged In" : "Not Logged In"}
       </div>
     )
   }
 }; 
 
+const mapStateToProps = state => {
+  return({
+    userLoggedIn: !!state.currentUser
+  })
+}
 
 
-export default connect(null, {currentUser, setCurrentUser})(App); 
+export default connect(mapStateToProps, {currentUser})(App); 
