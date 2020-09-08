@@ -3,6 +3,7 @@ import './App.css';
 // import PostContainer from './containers/PostContainer'; 
 import { currentUser } from './actions/user'; 
 import { connect } from 'react-redux';
+import Login from './components/user/Login'; 
 
 class App extends Component {
 
@@ -14,7 +15,7 @@ class App extends Component {
     const { userLoggedIn } = this.props
     return(
       <div className="App"> 
-        {userLoggedIn ? "Logged In" : "Not Logged In"}
+        {userLoggedIn ? "Logged In" : <Login/>}
       </div>
     )
   }
