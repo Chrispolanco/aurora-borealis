@@ -1,6 +1,6 @@
 export const setCurrentUser = user => {
     return {
-        type: "CURRENT_USER", 
+        type: "SET_CURRENT_USER", 
         user 
     }
 }
@@ -13,7 +13,7 @@ export const removeCurrentUser = () => {
 
 export const login = (credentials) => {
     return(dispatch) => {
-        // dispatch(removeCurrentUser())
+        dispatch(removeCurrentUser())
         return fetch("http://localhost:3000/login",{
             credentials: "include",
             method: "POST",
@@ -26,9 +26,8 @@ export const login = (credentials) => {
         .then(response => {
             if(response.error){
                 alert(response.error)
-                console.log("check this")
-            } else{
-                dispatch({ type: "CURRENT_USER"(response.data)})
+            } else {
+                dispatch(setCurrentUser(response))
                 console.log("Logged in ")
             }
         })

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-// import PostContainer from './containers/PostContainer'; 
 import { getCurrentUser } from './actions/user'; 
 import { connect } from 'react-redux';
 import Login from './components/user/Login'; 
@@ -28,4 +27,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {getCurrentUser})(App); 
+export default connect((mapStateToProps), {getCurrentUser})(App); 
