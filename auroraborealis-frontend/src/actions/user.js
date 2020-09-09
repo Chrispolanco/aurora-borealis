@@ -70,7 +70,7 @@ export const getCurrentUser = () => {
 }
 
 export const signup = (credentials) => {
-    return dispatch => {
+    return (dispatch) => {
         const newUser = {
             user: credentials
         }
@@ -86,8 +86,10 @@ export const signup = (credentials) => {
         .then(response => {
             if (response.error) {
                 alert(response.error)
+                console.log("Signup failed")
             } else {
                 dispatch(setCurrentUser(response))
+                console.log(response)
             }
         })
         .catch(console.log)

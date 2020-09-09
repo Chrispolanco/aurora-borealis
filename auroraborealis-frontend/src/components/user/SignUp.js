@@ -19,22 +19,22 @@ class SignUp extends Component {
     }
 
     handleOnSubmit = (event) => {
-        event.preventDefault(); 
-        this.props.addUser(this.state); 
+        event.preventDefault()
+        this.props.signup(this.state); 
 
-        this.setState({
-            username: '',
-            password: '', 
-            email: '', 
-            first_name: '', 
-            last_name: ''
-        })
+        // this.setState({
+        //     username: '',
+        //     password: '', 
+        //     email: '', 
+        //     first_name: '', 
+        //     last_name: ''
+        // })
     }
 
     render() {
         return(
             <div className="Signin form">
-                <form onSubmit = { this.handleSubmit }> 
+                <form onSubmit = { this.handleOnSubmit }> 
                     <label htmlFor="username"> Username: </label>
                     <br/> 
                     <input type="text" name="username" value={this.state.username} onChange={this.handleOnChange} placeholder="Username" />
@@ -54,6 +54,8 @@ class SignUp extends Component {
                     <label htmlFor="last_name"> Last Name: </label>
                     <br/> 
                     <input type="text" name="last_name" value={this.state.last_name} onChange={this.handleOnChange} placeholder="Last Name" /> 
+                    <br/> 
+                    <input type="submit" value="Sign Up" /> 
                 </form>
             </div> 
         )
