@@ -10,13 +10,13 @@ class SignUp extends Component {
         last_name: ''
     }
 
-    handleChange = (event) => {
+    handleOnChange = (event) => {
         this.setState({
             name: event.target.value
         })
     }
 
-    handleSubmit = (event) => {
+    handleOnSubmit = (event) => {
         event.preventDefault(); 
         this.props.addUser(this.state); 
         this.setState({
