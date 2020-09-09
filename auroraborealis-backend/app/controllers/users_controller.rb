@@ -21,6 +21,7 @@ class UsersController < ApplicationController
                 error: user.errors.full_messages.to_sentence 
             }
             render json: user.errors, status: 400
+        end 
     end 
 
     def update 

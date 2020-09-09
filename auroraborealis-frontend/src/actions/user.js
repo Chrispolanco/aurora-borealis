@@ -26,8 +26,10 @@ export const login = (credentials) => {
         .then(user => {
             if(user.error){
                 alert(user.error)
+                console.log("error")
             } else{
                 dispatch({ type: "CURRENT_USER", user: user})
+                console.log("Logged in ")
             }
         })
         .catch(console.log)
