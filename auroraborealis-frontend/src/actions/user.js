@@ -48,7 +48,7 @@ export const logout = () => {
     }
 }
 
-export const currentUser = () => {
+export const getCurrentUser = () => {
     return dispatch => {
         return fetch("http://localhost:3000/get_current_user", {
             credentials: "include", 

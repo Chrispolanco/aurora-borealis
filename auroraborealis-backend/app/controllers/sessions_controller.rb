@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     end 
 
     def get_current_user
-        if logged_in 
+        if logged_in? 
             render json: UserSerializer.new(current_user).to_serialized_json 
         else 
             render json: {
