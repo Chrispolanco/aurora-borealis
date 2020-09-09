@@ -14,7 +14,7 @@ export const removeCurrentUser = () => {
 export const login = (credentials) => {
     return(dispatch) => {
         dispatch(removeCurrentUser())
-        return fetch("http://localhost:3001/login",{
+        return fetch("http://localhost:3000/login",{
             credentials: "include", 
             method: "POST", 
             headers: {
@@ -39,7 +39,7 @@ export const login = (credentials) => {
 export const logout = () => {
     return dispatch => {
         dispatch(removeCurrentUser())
-        return fetch("http://localhost:3001/logout", {
+        return fetch("http://localhost:3000/logout", {
             credentials: "include", 
             method: "DELETE"
         })
@@ -50,7 +50,7 @@ export const logout = () => {
 
 export const currentUser = () => {
     return dispatch => {
-        return fetch("http://localhost:3001/get_current_user", {
+        return fetch("http://localhost:3000/get_current_user", {
             credentials: "include", 
             method: "GET", 
             headers: {
@@ -74,7 +74,7 @@ export const signup = (credentials) => {
         const newUser = {
             user: credentials
         }
-        return fetch("http://localhost:3001/signup", {
+        return fetch("http://localhost:3000/signup", {
             credentials: "include", 
             method: "POST", 
             headers: {
