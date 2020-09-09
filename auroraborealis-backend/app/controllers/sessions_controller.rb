@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params[:session][:username])
         if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
-            render json: UserSerializer.new(current_user).to_serialized_json
+            render json: UserSerializer.new(user).to_serialized_json
         else
             render json: {
                 error: "Incorrect Username or Password"
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
     def get_current_user
         if logged_in? 
-            render json: UserSerializer.new(current_user).to_serialized_json 
+            render json: UserSerializer.new(user).to_serialized_json 
         else 
             render json: {
                 error: "Log in required"

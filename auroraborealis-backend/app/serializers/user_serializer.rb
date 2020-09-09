@@ -1,7 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
 
   def initialize(user_object)
-    @ser = user_object
+    @user = user_object
   end 
 
   def to_serialized_json
