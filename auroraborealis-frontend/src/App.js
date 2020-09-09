@@ -11,10 +11,9 @@ class App extends Component {
 }
 
   render() {
-    const { userLoggedIn } = this.props
     return(
       <div className="App"> 
-        {userLoggedIn ? "Logged In" : <Login/>}
+        {this.props.userLoggedIn ? "Logged In" : <Login/>}
       </div>
     )
   }
@@ -22,7 +21,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return({
-    userLoggedIn: !!state.currentUser
+    userLoggedIn: !!state.currentUserReducer
   })
 }
 

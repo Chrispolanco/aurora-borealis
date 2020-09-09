@@ -14,7 +14,6 @@ import loginReducer from './reducers/loginReducer';
 const reducer = combineReducers({
   testReducer, 
   currentUserReducer, 
-  loginReducer
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

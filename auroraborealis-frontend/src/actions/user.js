@@ -1,6 +1,6 @@
 export const setCurrentUser = user => {
     return {
-        type: "SET_CURRENT_USER", 
+        type: "CURRENT_USER", 
         user 
     }
 }
@@ -26,9 +26,10 @@ export const login = (credentials) => {
         .then(response => {
             if(response.error){
                 alert(response.error)
+                console.log("Not Logged In")
             } else {
                 dispatch(setCurrentUser(response))
-                console.log("Logged in ")
+                console.log(response)
             }
         })
         .catch(console.log)
@@ -61,7 +62,7 @@ export const getCurrentUser = () => {
             if (response.error) {
                 alert(response.error)
             } else {
-                dispatch(setCurrentUser(response.data))
+                dispatch(setCurrentUser(response))
             }
         })
         .catch(console.log)
@@ -86,7 +87,7 @@ export const signup = (credentials) => {
             if (response.error) {
                 alert(response.error)
             } else {
-                dispatch(setCurrentUser(response.data))
+                dispatch(setCurrentUser(response))
             }
         })
         .catch(console.log)
