@@ -1,4 +1,6 @@
-import React, { Component } from 'react' 
+import React, { Component } from 'react';  
+import { connect } from 'react-redux'; 
+import { signup } from '../../actions/user'; 
 
 class SignUp extends Component {
 
@@ -12,22 +14,26 @@ class SignUp extends Component {
 
     handleOnChange = (event) => {
         this.setState({
-            name: event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
     handleOnSubmit = (event) => {
         event.preventDefault(); 
         this.props.addUser(this.state); 
+
         this.setState({
-            username: '', 
-            password: ''
+            username: '',
+            password: '', 
+            email: '', 
+            first_name: '', 
+            last_name: ''
         })
     }
 
     render() {
         return(
-            <div className="form">
+            <div className="Signin form">
                 <form onSubmit = { this.handleSubmit }> 
                     <label htmlFor="username"> Username: </label>
                     <br/> 
@@ -56,5 +62,5 @@ class SignUp extends Component {
 }
 
 
-export default SignUp; 
+export default connect(null, { signup })(SignUp); 
 
