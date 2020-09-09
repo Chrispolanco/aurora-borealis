@@ -1,8 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :email 
 
   def initialize(user_object)
-    @user = user_object
+    @ser = user_object
   end 
 
   def to_serialized_json
@@ -12,7 +11,7 @@ class UserSerializer < ActiveModel::Serializer
           only: [:id, :image, :description, :votes, :latitude, :longitude, :date, :created_at, :user_id]
         }
       },
-      only: [:id, :username, :email, :first_name, :last_name]
+      except: [:updated_at, :created_at, :password_digest],
     }
     @user.to_json(options)
   end 

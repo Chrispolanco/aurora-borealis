@@ -2,16 +2,15 @@ class SessionsController < ApplicationController
 
     def create
         user = User.find_by(username: params[:session][:username])
-        
         if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
-            render json: UserSerializer.new(user), status: 200
+            render json: UserSerializer.new(current_user).to_serialized_json
         else
             render json: {
-                error: "Incorrect username/password"
+                error: "Incorrect Username or Password"
             }
         end
-    end   
+    end
 
     def destory
         session.clear
