@@ -4,7 +4,7 @@ import { login } from '../../actions/user';
 
 class Login extends Component {
     state = {
-        email: "", 
+        username: "", 
         password: ""
     }
 
@@ -19,7 +19,7 @@ class Login extends Component {
         this.props.login(this.state)
 
         this.setState({
-            email: "", 
+            username: "", 
             password: ""
         })
     }
@@ -28,13 +28,13 @@ class Login extends Component {
         return(
             <div> 
                 <form onSubmit= {this.handleOnSubmit}> 
-                    <label htmlFor="email"> Email: </label>
+                    <label htmlFor="username"> Username: </label>
                     <br/> 
-                    <input type="email" name="email" value={this.state.email} onChange={this.handleOnChange} placeholder="Email" />
+                    <input type="string" name="username" value={this.state.username} onChange={this.handleOnChange} placeholder="Username" />
                     <br/> 
                     <label htmlFor="password"> Password: </label>
                     <br/> 
-                    <input type="text" name="password" value={this.state.password} onChange={this.handleOnChange} placeholder="Password" /> 
+                    <input type="password" name="password" value={this.state.password} onChange={this.handleOnChange} placeholder="Password" /> 
                     <br/>
                     <input type="submit" /> 
                 </form>

@@ -13,22 +13,22 @@ export const removeCurrentUser = () => {
 
 export const login = (credentials) => {
     return(dispatch) => {
-        dispatch(removeCurrentUser())
+        // dispatch(removeCurrentUser())
         return fetch("http://localhost:3000/login",{
-            credentials: "include", 
-            method: "POST", 
+            credentials: "include",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
-            }, 
+            },
             body: JSON.stringify(credentials)
         })
         .then(response => response.json())
-        .then(user => {
-            if(user.error){
-                alert(user.error)
-                console.log("error")
+        .then(response => {
+            if(response.error){
+                alert(response.error)
+                console.log("check this")
             } else{
-                dispatch({ type: "CURRENT_USER", user: user})
+                dispatch({ type: "CURRENT_USER"(response.data)})
                 console.log("Logged in ")
             }
         })
