@@ -9,7 +9,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom'; 
 import testReducer from './reducers/testReducer'; 
 import currentUserReducer from './reducers/currentUserReducer'; 
-import loginReducer from './reducers/loginReducer'; 
 
 const reducer = combineReducers({
   testReducer, 
