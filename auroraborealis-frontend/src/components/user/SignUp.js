@@ -22,13 +22,13 @@ class SignUp extends Component {
         event.preventDefault()
         this.props.signup(this.state); 
 
-        // this.setState({
-        //     username: '',
-        //     password: '', 
-        //     email: '', 
-        //     first_name: '', 
-        //     last_name: ''
-        // })
+        this.setState({
+            username: '',
+            password: '', 
+            email: '', 
+            first_name: '', 
+            last_name: ''
+        })
     }
 
     render() {
