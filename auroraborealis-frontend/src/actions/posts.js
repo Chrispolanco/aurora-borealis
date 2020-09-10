@@ -19,16 +19,10 @@ export const deletePostConnect = postId => {
     }
 }
 
-export const updatePost = post => {
+export const updatePostConnect = post => {
     return {
         type: "UPDATE_POST", 
         post
-    }
-}
-
-export const clearPosts = () => {
-    return {
-        type: "CLEAR_POSTS"
     }
 }
 
@@ -72,5 +66,71 @@ export const deletePost = (postId) => {
                 }
             })
             .catch(console.log)
+    }
+}
+
+export const createPost = (enteredPostData) => {
+    return dispatch => {
+        const postData = {
+            post: {
+                image: enteredPostData.image, 
+                description: enteredPostData.description, 
+                votes: enteredPostData.votes, 
+                latitude: enteredPostData.latitude, 
+                longitude: enteredPostData.longitude, 
+                date: enteredPostData.date, 
+                user_id: enteredPostData.user_id
+            }
+        }
+        return fetch("http://localhost:3000/posts", {
+            credentials: "include", 
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json"
+            }, 
+            body: JSON.stringify(postData)
+        })
+        .then(response => response.json())
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
+            } else {
+                dispatch(addPost(response))
+            }
+        })
+        .catch(console.log)
+    }
+}
+
+export const updatePost = (enteredPostData) => {
+    return dispatch => {
+        const postData = {
+            post: {
+                image: enteredPostData.image, 
+                description: enteredPostData.description, 
+                votes: enteredPostData.votes, 
+                latitude: enteredPostData.latitude, 
+                longitude: enteredPostData.longitude, 
+                date: enteredPostData.date, 
+                user_id: enteredPostData.user_id
+            }
+        }
+        return fetch("http://localhost:3000/posts"+`${enteredPostData.postId}`, {
+            credentials: "include", 
+            method: "PATCH", 
+            headers: {
+                "Content-Type": "application/json"
+            }, 
+            body: JSON.stringify(postData)
+        })
+        .then(response => response.json())
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
+            } else {
+                dispatch(updatePostConnect(response))
+            }
+        })
+        .catch(console.log)
     }
 }
