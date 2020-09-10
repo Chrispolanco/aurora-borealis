@@ -44,7 +44,7 @@ export const logout = () => {
             method: "DELETE"
         })
         .then(response => response.json())
-        .then(json => alert(json.notice))
+        .then(response => alert(response.notice))
     }
 }
 

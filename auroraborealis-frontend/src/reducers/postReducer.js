@@ -1,26 +1,24 @@
-import uuid from 'uuid'; 
+function postReducer (state = [], action){
+    switch(action.type) {
+        case "GET_POSTS": 
+            return action.posts
+        
+        case "ADD_POST":
+            return [...state, action.post]
 
-const postReducer =(state = {
-    posts: [],
-}, action) => {
-    switch (action.type) {
-        case 'ADD_POST': 
-            const post = {
-                id: uuid(),
-                image: action.post.image, 
-                description: action.post.description, 
-                votes: action.post.votes, 
-                latitude: action.post.latitude, 
-                longitude: action.post.longitude, 
-                date: action.post.date, 
-                user_id: action.post.user_id
-            }
-            return { posts: state.posts.concat(post)}; 
-        case 'DELETE_POST':
-            return {posts: state.posts.filter(post => post.id !== action.post)}
+        case "DELETE_POST": 
+            return state.filter(post => post.id !== action.postId)
+
+        case "UPDATE_POST": 
+            return state.map(post => post.id === action.post.id ? action.post : post)
+
+        case "CLEAR_POSTS": 
+            return []
+
         default: 
-            return state; 
+        return state
     }
+
 }
 
-export default postReducer
+export default postReducer; 

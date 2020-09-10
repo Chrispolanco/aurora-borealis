@@ -7,11 +7,11 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk'; 
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom'; 
-import testReducer from './reducers/testReducer'; 
+import addRemoveReducer from './reducers/addRemoveReducer'; 
 import currentUserReducer from './reducers/currentUserReducer'; 
 
 const reducer = combineReducers({
-  testReducer, 
+  addRemoveReducer, 
   currentUserReducer, 
 })
 

@@ -11,20 +11,20 @@ export default function testReducer(
 ) {
     switch(action.type) {
 
-        case 'ADD_USER': 
-        const user = {
-            id: cuidFn(),
-            username: action.username, 
-            email: action.email, 
-            first_name: action.first_name, 
-            last_name: action.last_name, 
-            password_digest: action.password_digest, 
-        }; 
-        return {...state, users: [...state.users, user]};
+        // case 'ADD_USER': 
+        // const user = {
+        //     id: cuidFn(),
+        //     username: action.username, 
+        //     email: action.email, 
+        //     first_name: action.first_name, 
+        //     last_name: action.last_name, 
+        //     password_digest: action.password_digest, 
+        // }; 
+        // return {...state, users: [...state.users, user]};
 
-        case 'DELETE_USER': 
-            const users = state.users.filter(user => user.id !== action.id)
-            return {...state, users}
+        // case 'DELETE_USER': 
+        //     const users = state.users.filter(user => user.id !== action.id)
+        //     return {...state, users}
 
         case 'ADD_POST': 
             const post = {

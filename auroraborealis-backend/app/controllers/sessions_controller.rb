@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         end
     end
 
-    def destory
+    def destroy
         session.clear
         render json: {
             notice: "Successfully logged out"

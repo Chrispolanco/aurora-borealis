@@ -4,7 +4,10 @@ import { getCurrentUser } from './actions/user';
 import { connect } from 'react-redux';
 import Login from './components/user/Login'; 
 import SignUp from './components/user/SignUp'; 
-import { Router, Route, Switch, Link } from 'react-router-dom';
+import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import Logout from './components/user/Logout'; 
+import Posts from './components/posts/Posts'; 
+
 
 class App extends Component {
 
@@ -15,9 +18,12 @@ class App extends Component {
   render() {
     return(
       <div className="App"> 
-
         {this.props.userLoggedIn ? "Logged In" : <SignUp/>}
-
+        {this.props.userLoggedIn ? <Logout/> : ""}
+        {/* <NavLink to="/posts">Posts</NavLink>
+        <Switch> 
+          <Route exact path='/posts' component={Posts}/>
+        </Switch> */}
       </div>
     )
   }
