@@ -8,21 +8,19 @@ class PostContainer extends Component {
         return(
             <div className="PostsContainer">
                 <Posts posts={this.props.posts} /> 
-                console.log(posts)
             </div> 
         )
     }
 
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         posts: state.posts
-//     }
-// }
+const mapStateToProps = state => {
+    return ({
+        posts: state.postReducer
+    })
+}
 
-const mapStateToProps = ( posts ) => ({ posts })
-
+// const mapStateToProps = ( posts ) => ({ posts })
 
 // const mapDispatchToProps = dispatch => ({
 //     addPost: post => dispatch({ type: "ADD_POST", post }), 

@@ -1,6 +1,6 @@
 function postReducer (state = [], action){
     switch(action.type) {
-        case "GET_POSTS": 
+        case "GET_POSTS":
             return action.posts
         
         case "ADD_POST":
@@ -13,7 +13,7 @@ function postReducer (state = [], action){
             return state.map(post => post.id === action.post.id ? action.post : post)
 
         default: 
-        return state
+            return state
     }
 
 }

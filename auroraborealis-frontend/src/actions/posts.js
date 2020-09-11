@@ -36,12 +36,12 @@ export const fetchPosts = () => {
             }
         })
         .then(response => response.json())
-        .then(response => {
-            if (response.error){
-                alert(response.error)
+        .then(posts => {
+            if (posts.error){
+                alert(posts.error)
             } else {
-                dispatch(getPosts(response))
-                console.log(response)
+                dispatch(getPosts(posts))
+                console.log(posts)
             }
         })
         .catch(console.log)

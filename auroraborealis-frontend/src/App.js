@@ -39,4 +39,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect((mapStateToProps), {getCurrentUser, fetchPosts})(App); 
+export default connect(mapStateToProps, {getCurrentUser, fetchPosts})(App); 
