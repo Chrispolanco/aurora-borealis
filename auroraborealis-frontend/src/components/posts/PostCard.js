@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 class PostCard extends Component {
 
-    // handleClick = (e) => {
-    //     this.props.deletePost(this.props.post.id)
-    // }
+    handleClick = (e) => {
+        this.props.deletePost(this.props.post.id)
+    }
 
     render() {
-        // const { post } = this.props; 
+        const { post } = this.props; 
         return( 
             <div> 
-                <h1>Worked</h1>
-                {/* <li> {post}</li>
-                <button onClick={this.handleClick}>Delete</button> */}
+                <li>{post.description}</li>
+                <li> {post.date}</li>
+                <button onClick={this.handleClick}>Delete</button>
             </div>
         )
     }
