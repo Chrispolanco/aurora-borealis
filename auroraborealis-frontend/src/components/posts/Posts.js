@@ -1,10 +1,12 @@
 import React from 'react'; 
 import PostCard from '../posts/PostCard'
 
-const Posts = ({ posts }) => {
-    const postList = posts.map(post => {
-            return <PostCard key={post.id} post={post}/>
-    })
+const Posts = ( props ) => {
+    return (
+        <ul>
+            {props.posts.map(post => <PostCard post={post} key={post.id}/> )}
+        </ul>
+    )
 }
 
 

@@ -11,8 +11,8 @@ import postReducer from './reducers/postReducer';
 import currentUserReducer from './reducers/currentUserReducer'; 
 
 const reducer = combineReducers({
-  postReducer, 
   currentUserReducer, 
+  postReducer, 
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

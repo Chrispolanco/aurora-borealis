@@ -1,10 +1,17 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'; 
+import { fetchPosts } from '../actions/posts'; 
 import Posts from '../components/posts/Posts'; 
+
 
 class PostContainer extends Component {
 
+    componentDidMount() {
+        this.props.fetchPosts()
+    }
+
     render() {
+        const posts = this.props.postReducer
         return(
             <div className="PostsContainer">
                 <Posts posts={this.props.posts} /> 
@@ -14,10 +21,10 @@ class PostContainer extends Component {
 
 }
 
-const mapStateToProps = state => {
-    return ({
-        posts: state.postReducer
-    })
+const mapStateToProps = (state) => {
+    return {
+        posts: state.postReducer, 
+    }
 }
 
 // const mapStateToProps = ( posts ) => ({ posts })
@@ -27,4 +34,4 @@ const mapStateToProps = state => {
 //     deletePost: (id) => dispatch({ type: "DELETE_POST", id})
 // })
 
-export default connect(mapStateToProps)(PostContainer)
+export default connect(mapStateToProps, { fetchPosts })(PostContainer)

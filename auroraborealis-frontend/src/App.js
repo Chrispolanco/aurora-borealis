@@ -18,6 +18,7 @@ class App extends Component {
 }
 
   render() {
+    const { userLoggedIn, posts } = this.props
     return(
       <div className="App"> 
         {this.props.userLoggedIn ? "Logged In" : <Login/>}
@@ -34,7 +35,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return({
-    userLoggedIn: !!state.currentUserReducer
+    userLoggedIn: !!state.currentUserReducer, 
+    posts: state.postReducer
   })
 }
 

@@ -36,7 +36,7 @@ export const fetchPosts = () => {
             }
         })
         .then(response => response.json())
-        .then(posts => {
+        .then(posts => { 
             if (posts.error){
                 alert(posts.error)
             } else {
@@ -50,7 +50,7 @@ export const fetchPosts = () => {
 
 export const deletePost = (postId) => {
     return (dispatch) => {
-        return fetch("http://localhost:3000/posts"+`${postId}`, {
+        return fetch("http://localhost:3000/posts/"+`${postId}`, {
             credentials: "include", 
             method: "DELETE", 
             headers: {
