@@ -12,9 +12,6 @@ function postReducer (state = [], action){
         case "UPDATE_POST": 
             return state.map(post => post.id === action.post.id ? action.post : post)
 
-        case "CLEAR_POSTS": 
-            return []
-
         default: 
         return state
     }

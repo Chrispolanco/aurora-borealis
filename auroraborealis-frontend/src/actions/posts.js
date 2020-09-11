@@ -40,8 +40,8 @@ export const fetchPosts = () => {
             if (response.error){
                 alert(response.error)
             } else {
-                dispatch(getPosts(posts))
-                console.log(posts)
+                dispatch(getPosts(response))
+                console.log(response)
             }
         })
         .catch(console.log)
