@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-    {username: "chrispolanco", email: "chrispolanco@sbcglobal.net", first_name: "Christian", last_name: "Polanco", password: "password"}
+    {username: "chrispolanco", email: "chrispolanco@sbcglobal.net", first_name: "Christian", last_name: "Polanco", password: "password"}, 
+    {username: "joss", email: "joss@gmail.net", first_name: "Joss", last_name: "Fuentes", password: "password"},
+    {username: "dempsey", email: "dempsey@gmail.net", first_name: "Dempsey", last_name: "Polanco", password: "password"}
 ]); 
 
 Comment.create([
@@ -15,5 +17,8 @@ Comment.create([
 ]); 
 
 Post.create([
-    {image: "google.com", description: "moon on 12/12/1990", votes:10, latitude: 12.0, longitude: 12.0, date: "1990-12-12", user_id: 1}
+    {image: "google.com", description: "moon on 09/12/1990", votes:10, latitude: 12.0, longitude: 12.0, date: "1990-09-12", user_id: 1}, 
+    {image: "google.com", description: "moon on 10/12/1990", votes:9, latitude: 12.0, longitude: 12.0, date: "1990-10-12", user_id: 2}, 
+    {image: "google.com", description: "moon on 11/12/1990", votes:8, latitude: 12.0, longitude: 12.0, date: "1990-11-12", user_id: 3}, 
+    {image: "google.com", description: "moon on 12/12/1990", votes:7, latitude: 12.0, longitude: 12.0, date: "1990-12-12", user_id: 4}
 ]); 
