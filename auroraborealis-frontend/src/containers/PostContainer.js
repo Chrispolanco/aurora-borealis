@@ -1,27 +1,27 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'; 
 import Posts from '../components/posts/Posts'; 
-import { NavLink, Switch, Route } from 'react-router-dom';
 
 class PostContainer extends Component {
 
     render() {
         return(
             <div className="PostsContainer">
-
+                <Posts posts={this.props.posts} /> 
+                console.log(posts)
             </div> 
         )
     }
 
 }
 
-const mapStateToProps = state => {
-    return {
-        posts: state.posts
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         posts: state.posts
+//     }
+// }
 
-// const mapStateToProps = ( posts ) => ({ posts })
+const mapStateToProps = ( posts ) => ({ posts })
 
 
 // const mapDispatchToProps = dispatch => ({

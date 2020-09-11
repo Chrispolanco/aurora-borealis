@@ -3,12 +3,12 @@ import PostCard from '../posts/PostCard'
 
 const Posts = ({ posts }) => {
     const postList = posts.map(post => {
-        return <PostCard key={post.id} post={post} /> 
+            return <PostCard key={post.id} post={post}/>
     })
 }
 
 
-export default Posts 
+export default Posts
 
 // import React, { Component } from 'react'; 
 // import PostCard from '../posts/PostCard'; 
@@ -28,5 +28,3 @@ export default Posts
 //     }
 
 // }
-
-// export default Posts
