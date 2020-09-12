@@ -18,12 +18,13 @@ class App extends Component {
 }
 
   render() {
-    const { userLoggedIn, posts } = this.props
+    // const { userLoggedIn, posts} = this.props
     return(
       <div className="App"> 
-        {this.props.userLoggedIn ? "Logged In" : <Login/>}
-        {this.props.userLoggedIn ? <Logout/> : ""}
-        <NavLink to="/posts">Posts</NavLink>
+        {this.props.userLoggedIn ? <Logout/> : <Login/>}
+        <br></br>
+        <br></br>
+        {this.props.userLoggedIn ? <Logout/> : <SignUp/>}
         <NavLink to="/posts"><h1> All Posts Created</h1></NavLink>
         <Switch> 
           <Route exact path='/posts' component={ PostContainer } /> 
