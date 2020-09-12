@@ -22,11 +22,11 @@ const mapStateToProps = (state) => {
     }
 }
 
+export default connect(mapStateToProps)(PostContainer)
+
 // const mapStateToProps = ( posts ) => ({ posts })
 
 // const mapDispatchToProps = dispatch => ({
 //     addPost: post => dispatch({ type: "ADD_POST", post }), 
 //     deletePost: (id) => dispatch({ type: "DELETE_POST", id})
 // })
-
-export default connect(mapStateToProps)(PostContainer)

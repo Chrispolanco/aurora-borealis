@@ -26,6 +26,20 @@ export const updatePostConnect = post => {
     }
 }
 
+export const upVotePost = post => {
+    return {
+        type: "UPVOTE_POST", 
+        post
+    }
+}
+
+export const downVotePost = post => {
+    return {
+        type: "DOWNVOTE_POST", 
+        post
+    }
+}
+
 export const fetchPosts = () => {
     return (dispatch) => {
         return fetch ("http://localhost:3000/posts", {

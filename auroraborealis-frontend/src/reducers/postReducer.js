@@ -14,8 +14,17 @@ function postReducer (state = [], action){
 
         default: 
             return state
-    }
 
+        case 'UPVOTE_POST':
+            return state.map((post) => 
+            post.id === action.postId ? {...post, votes: (post.votes += 1)} : post
+            )
+
+        case 'DOWNVOTE_POST': 
+            return state.map((post) =>
+            post.id === action.postId && post.votes > 0 ? {...post, votes: (post.votes -= 1)} : post
+            )  
+    }
 }
 
 export default postReducer; 

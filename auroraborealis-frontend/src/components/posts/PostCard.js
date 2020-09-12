@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { upVotePost } from '../../actions/posts'; 
 
 class PostCard extends Component {
 
@@ -31,4 +32,10 @@ class PostCard extends Component {
     }
 }; 
 
-export default PostCard; 
+const mapStateToProps = (state) => {
+    return {
+        votes: state.postReducer,
+    }
+}
+
+export default connect(mapStateToProps, {upVotePost})(PostCard); 
