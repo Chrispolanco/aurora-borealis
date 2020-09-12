@@ -1,14 +1,14 @@
-const userReducer = (state = [], action) => {
+const voteReducer = (state = [], action) => {
     switch(action.type) {
 
-        case 'UPVOTE_COMMENT':
-            return state.map((comment) => 
-                comment.id === action.commentId ? {...comment, votes: (comment.votes += 1)} : comment
+        case 'UPVOTE_POST':
+            return state.map((post) => 
+            post.id === action.commentId ? {...post, votes: (post.votes += 1)} : post
             )
 
-        case 'DOWNVOTE_COMMENT': 
-            return state.map((comment) => {
-                comment.id === action.commentId && comment.votes > 0 ? {...comment, votes: (comment.votes -= 1)} : comment;
+        case 'DOWNVOTE_POST': 
+            return state.map((post) => {
+                post.id === action.commentId && post.votes > 0 ? {...post, votes: (post.votes -= 1)} : post;
             })
         
         default: 
@@ -16,4 +16,4 @@ const userReducer = (state = [], action) => {
     }
 }
 
-export default userReducer
+export default voteReducer

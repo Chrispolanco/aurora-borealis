@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class PostCard extends Component {
 
-    handleClick = (e) => {
-        this.props.deletePost(this.props.post.id)
-    }
-
     render() {
         const { post } = this.props; 
+        const date = new Date(post.created_at).toLocaleDateString()
         return( 
-            <div> 
-                <li>{post.description}</li>
-                <li> {post.date}</li>
-                <button onClick={this.handleClick}>Delete</button>
+            <div className="postCard"> 
+                <ul>
+                    <h5>Date Submitted:</h5>
+                    {date}
+                    <h6>User ID:</h6>
+                    {post.user_id}
+                    <h6>Description:</h6>
+                    {post.description}
+                    <h6>Date:</h6>
+                    {post.date}
+                    <h6>Votes:</h6>
+                    {post.votes}
+                    <h6>Image:</h6>
+                    {post.image} 
+                    <h6>Latitude:</h6>
+                    {post.latitude} 
+                    <h6>Longitude:</h6>
+                    {post.longitude}
+                </ul> 
             </div>
         )
     }
 }; 
-
 
 export default PostCard; 

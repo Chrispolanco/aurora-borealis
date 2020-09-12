@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'; 
-import { fetchPosts } from '../actions/posts'; 
 import Posts from '../components/posts/Posts'; 
 
 
