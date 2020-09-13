@@ -24,12 +24,12 @@ class PostCard extends Component {
                     {post.latitude} 
                     <h6>Longitude:</h6>
                     {post.longitude}
-                    <h6>Comments:</h6>
+                </ul> 
+                <h6>Comments:</h6>
                     {/* {post.comments.map(comment =>
                         <h4> {comment.context}</h4> )} */}
                     {post.comments.map(comment =>
-                        <Comment comment={comment} key={commment.id}/>
-                </ul> 
+                        <Comment comment={comment} key={commment.id}/>)}
             </div>
         )
     }
