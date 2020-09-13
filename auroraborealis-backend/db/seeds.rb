@@ -20,7 +20,7 @@ Post.create([
 ]); 
 
 Comment.create([
-    {context: "The moon was especially bright this night", user_id: 1, post_id: 1}, 
-    {context: "The moon was especially bright this night", user_id: 2, post_id: 2}, 
-    {context: "The moon was especially bright this night", user_id: 3, post_id: 3}
+    {context: "Comment number 1", user_id: 1, post_id: 1}, 
+    {context: "Comment number 2", user_id: 2, post_id: 2}, 
+    {context: "Comment number 3", user_id: 3, post_id: 3}
 ]);  

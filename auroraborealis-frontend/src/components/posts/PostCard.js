@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { upVotePost } from '../../actions/posts'; 
-import Posts from './Posts';
 
 class PostCard extends Component {
 
@@ -28,17 +25,16 @@ class PostCard extends Component {
                     <h6>Longitude:</h6>
                     {post.longitude}
                     <h6>Comments:</h6>
-                    {post.comments}
+                    {/* {post.comments.map(comment =>
+                        <h4> {comment.context}</h4> )} */}
+                    {post.comments.map(comment =>
+                        <Comment comment={comment} key={commment.id}/>
                 </ul> 
             </div>
         )
     }
 }; 
 
-const mapStateToProps = (state) => {
-    return {
-        votes: state.postReducer,
-    }
-}
 
-export default connect(mapStateToProps, {upVotePost})(PostCard); 
+
+export default PostCard; 
