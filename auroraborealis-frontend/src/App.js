@@ -5,7 +5,7 @@ import { fetchPosts } from './actions/posts';
 import { connect } from 'react-redux';
 import Login from './components/user/Login'; 
 import SignUp from './components/user/SignUp'; 
-import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import Logout from './components/user/Logout'; 
 import PostContainer from './containers/PostContainer'
 
@@ -36,8 +36,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return({
-    userLoggedIn: !!state.currentUserReducer, 
-    posts: state.postReducer
+    userLoggedIn: !!state.currentUserReducer
   })
 }
 

@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
 
+    class PostsController < ApplicationController
+
+    end
+
     def new 
         comment = Comment.new 
         render json: CommentSerializer.new(comment).to_serialized_json

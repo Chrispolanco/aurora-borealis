@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { upVotePost } from '../../actions/posts'; 
+import Posts from './Posts';
 
 class PostCard extends Component {
 
@@ -10,7 +11,7 @@ class PostCard extends Component {
         return( 
             <div className="postCard"> 
                 <ul>
-                    <h5>Date Submitted:</h5>
+                    <h1>Date Submitted:</h1>
                     {date}
                     <h6>User ID:</h6>
                     {post.user_id}
@@ -26,6 +27,8 @@ class PostCard extends Component {
                     {post.latitude} 
                     <h6>Longitude:</h6>
                     {post.longitude}
+                    <h6>Comments:</h6>
+                    {post.comments}
                 </ul> 
             </div>
         )
