@@ -5,7 +5,7 @@ import PersonalPosts from '../components/posts/PersonalPosts';
 class PersonalPostContainer extends Component{
     render(){
         return(
-            <div className="personal_posts"> 
+            <div className="Personal_Posts"> 
                 <PersonalPosts posts={this.props.posts} userLoggedIn={this.props.userLoggedIn} /> 
             </div>
         )
@@ -14,7 +14,8 @@ class PersonalPostContainer extends Component{
 
 const mapStateToProps = state => {
     return({
-      userLoggedIn: !!state.currentUserReducer
+      userLoggedIn: state.currentUserReducer, 
+      posts: state.postReducer
     })
 }
 

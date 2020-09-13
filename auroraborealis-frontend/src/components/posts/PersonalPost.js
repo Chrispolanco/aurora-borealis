@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const PersonalPost = ({ post }) => {
     return(
         <div className="Personal_Post" key={post.id} > 
-            {post.description}
+            <h1> {post.description} </h1>
         </div>
     )
 }
