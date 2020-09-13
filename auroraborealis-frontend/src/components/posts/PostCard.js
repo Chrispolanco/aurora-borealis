@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CommentCard from '../comments/commentCard'
 
 class PostCard extends Component {
 
@@ -29,7 +30,7 @@ class PostCard extends Component {
                     {/* {post.comments.map(comment =>
                         <h4> {comment.context}</h4> )} */}
                     {post.comments.map(comment =>
-                        <Comment comment={comment} key={commment.id}/>)}
+                        <CommentCard comment={comment} key={comment.id}/>)}
             </div>
         )
     }
