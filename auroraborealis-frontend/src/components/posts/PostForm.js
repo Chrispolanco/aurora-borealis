@@ -1,4 +1,6 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
+import { connect } from 'react-redux'; 
+import { addPost } from '../../actions/posts'; 
 
 class PostFrom extends Component {
     state = {
@@ -9,10 +11,9 @@ class PostFrom extends Component {
         date: '' 
     }
 
-    handleOnChange(e) {
-        const {value, name} = e.target; 
+    handleOnChange(event) {
         this.setState({
-            [name]: value 
+            [event.target.name]: event.target.value 
         })
     }
 
