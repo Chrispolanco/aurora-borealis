@@ -1,12 +1,14 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'; 
 import PersonalPosts from '../components/posts/PersonalPosts'; 
+import PostForm from '../components/posts/PostForm'; 
 
 class PersonalPostContainer extends Component{
     render(){
         return(
             <div className="Personal_Posts"> 
                 <PersonalPosts posts={this.props.posts} userLoggedIn={this.props.userLoggedIn} /> 
+                <PostForm userLoggedIn={this.props.userLoggedIn} />
             </div>
         )
     }

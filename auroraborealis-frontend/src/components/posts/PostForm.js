@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import { addPost } from '../../actions/posts'; 
+import { createPost } from '../../actions/posts'; 
 
-class PostFrom extends Component {
-    state = {
-        image: '', 
-        description: '', 
-        latitude: '', 
-        longitude: '', 
-        date: '' 
+class PostForm extends Component {
+
+    constructor(props){
+        super(props); 
+        this.state = {
+            image: '', 
+            description: '', 
+            latitude: '', 
+            longitude: '', 
+            date: '', 
+            user_id: this.props.userLoggedIn.id
+        }
     }
 
-    handleOnChange(event) {
+    handleOnChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value 
         })
     }
 
-    handleOnSubmit = (e) => {
-        e.preventDefault(); 
-        // const post = {...this.state, userId: this.props.userId}; 
-        this.props.addPost({
-            description: this.state.description, 
-            userId: this.props.user_id, 
-        })
+    handleOnSubmit = (event) => {
+        event.preventDefault(); 
+        this.props.createPost(this.state)
         this.setState({
             image: '', 
             description: '', 
@@ -37,20 +38,20 @@ class PostFrom extends Component {
         return(
             <div className="container"> 
                 <form className="form" onSubmit={this.handleOnSubmit}> 
-                    <label htmlFor="image" class="innerForm">Image</label>
-                    <input type="text" name="image" onChange={(event) => this.handleOnChange(event)} value={this.state.image}/> 
+                    <label htmlFor="image" className="innerForm">Image</label>
+                    <input type="text" name="image" onChange={this.handleOnChange} value={this.state.image}/> 
                     <br/> 
-                    <label htmlFor="description" class="innerForm">Description</label>
-                    <input type="text" name="description" onChange={(event) => this.handleOnChange(event)} value={this.state.description}/> 
+                    <label htmlFor="description" className="innerForm">Description</label>
+                    <input type="text" name="description" onChange={this.handleOnChange}  value={this.state.description}/> 
                     <br/> 
-                    <label htmlFor="latitude" class="innerForm">Latitude</label>
-                    <input type="float" name="latitude" onChange={(event) => this.handleOnChange(event)} value={this.state.latitude}/> 
+                    <label htmlFor="latitude" className="innerForm">Latitude</label>
+                    <input type="float" name="latitude" onChange={this.handleOnChange} value={this.state.latitude}/> 
                     <br/> 
-                    <label htmlFor="longitude" class="innerForm">Longitude</label>
-                    <input type="float" name="longitude" onChange={(event) => this.handleOnChange(event)} value={this.state.longitude}/> 
+                    <label htmlFor="longitude" className="innerForm">Longitude</label>
+                    <input type="float" name="longitude" onChange={this.handleOnChange}  value={this.state.longitude}/> 
                     <br/> 
-                    <label htmlFor="date" class="innerForm">Date</label>
-                    <input type="date" name="date" onChange={(event) => this.handleOnChange(event)} value={this.state.date}/> 
+                    <label htmlFor="date" className="innerForm">Date</label>
+                    <input type="date" name="date" onChange={this.handleOnChange}  value={this.state.date}/> 
                     <br/> 
                 <button type="submit" className="button">Submit</button>
                 </form>
@@ -60,4 +61,4 @@ class PostFrom extends Component {
 
 }
 
-export default PostFrom; 
+export default connect(null, { createPost })(PostForm)

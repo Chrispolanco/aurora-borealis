@@ -9,6 +9,7 @@ import { Route, Switch, NavLink } from 'react-router-dom';
 import Logout from './components/user/Logout'; 
 import PostContainer from './containers/PostContainer'
 import PersonalPostContainer from './containers/PersonalPostContainer';
+import PostForm from './components/posts/PostForm'; 
 
 
 class App extends Component {
@@ -28,9 +29,11 @@ class App extends Component {
         {this.props.userLoggedIn ? <Logout/> : <SignUp/>}
         <NavLink to="/posts"><h1> All Posts</h1></NavLink>
         <NavLink to="/personalPosts"><h1> Personal Posts </h1></NavLink>
+        <NavLink to="/createPost"><h1>Create Post</h1></NavLink>
         <Switch> 
-          <Route exact path='/posts' component={ PostContainer } /> 
-          <Route exact path='/personalPosts' component={ PersonalPostContainer} />
+          <Route exact path="/posts" component={ PostContainer } /> 
+          <Route exact path="/personalPosts" component={ PersonalPostContainer} />
+          <Route exact path="/createPost" component={ PersonalPostContainer} />
         </Switch>
       </div>
     )

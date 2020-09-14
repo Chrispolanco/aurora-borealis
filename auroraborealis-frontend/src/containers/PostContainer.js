@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import Posts from '../components/posts/Posts'; 
 
-
 class PostContainer extends Component {
 
 
@@ -13,20 +12,11 @@ class PostContainer extends Component {
             </div> 
         )
     }
-
 }
 
-const mapStateToProps = (state) => {
-    return {
-        posts: state.postReducer
-    }
+const mapStateToProps = state => {
+    return({
+      posts: state.postReducer
+    })
 }
-
 export default connect(mapStateToProps)(PostContainer)
-
-// const mapStateToProps = ( posts ) => ({ posts })
-
-// const mapDispatchToProps = dispatch => ({
-//     addPost: post => dispatch({ type: "ADD_POST", post }), 
-//     deletePost: (id) => dispatch({ type: "DELETE_POST", id})
-// })

@@ -1,15 +1,15 @@
 function currentUserReducer(state=null, action) {
     switch (action.type) {
         case 'CURRENT_USER':
-            console.log("1") 
+            console.log("Ser Current User") 
             return action.user 
 
         case 'REMOVE_USER': 
-            console.log("2")
+            console.log("Removed User")
             return state
         
         default: 
-            console.log("3")
+            console.log("Default")
             return state; 
     }
 }
