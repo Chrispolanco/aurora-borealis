@@ -7,7 +7,7 @@ const PersonalPosts = ({ posts, userLoggedIn }) => {
         post.user_id === userLoggedIn.id)
 
     const personalPost = personalPosts.map(post => {
-        return <PersonalPost key={post.id} post={post} />
+        return <PersonalPost key={post.id} post={post} userLoggedIn={userLoggedIn} />
     })
 
     return(

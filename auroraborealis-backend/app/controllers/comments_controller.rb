@@ -1,9 +1,5 @@
 class CommentsController < ApplicationController
 
-    class PostsController < ApplicationController
-
-    end
-
     def new 
         comment = Comment.new 
         render json: CommentSerializer.new(comment).to_serialized_json
@@ -15,7 +11,7 @@ class CommentsController < ApplicationController
     end 
 
     def create 
-        comment = Comment.create(adventure_params) 
+        comment = Comment.create(comment_params) 
         render json: CommentSerializer.new(comment).to_serialized_json
     end 
 

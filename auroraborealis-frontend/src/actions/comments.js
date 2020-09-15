@@ -14,7 +14,7 @@ export const addComment = (enteredCommentData) => {
                 post_id: enteredCommentData.post_id
             }
         }
-        return fetch(`http://localhost:3000/posts/${enteredCommentData.post_id}`, {
+        return fetch(`http://localhost:3000/comments`, {
             credentials: "include", 
             method: "POST", 
             headers: {
@@ -33,3 +33,5 @@ export const addComment = (enteredCommentData) => {
         .catch(console.log)
     }
 }
+
+// `http://localhost:3000/posts/${enteredCommentData.post_id}`

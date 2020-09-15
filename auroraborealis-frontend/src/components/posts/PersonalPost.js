@@ -1,7 +1,8 @@
 import React, { Component } from 'react'; 
-import CommentCard from '../comments/commentCard'
+import CommentCard from '../comments/CommentCard'
+import CommentForm from '../comments/CommentForm'
 
-const PersonalPost = ({ post }) => {
+const PersonalPost = ({ post, userLoggedIn }) => {
     const date = new Date(post.created_at).toLocaleDateString()
     return(
         <div className="Personal_Post" key={post.id} > 
@@ -12,6 +13,7 @@ const PersonalPost = ({ post }) => {
             {post.comments.map(comment =>
                 <CommentCard comment={comment} key={comment.id}/>)}
             <p>Add Comment:</p>
+                <CommentForm post={post} userLoggedIn={userLoggedIn} /> 
         </div>
     )
 }
