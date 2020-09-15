@@ -130,7 +130,7 @@ export const updatePost = (enteredPostData) => {
                 user_id: enteredPostData.user_id
             }
         }
-        return fetch("http://localhost:3000/posts"+`${enteredPostData.postId}`, {
+        return fetch("http://localhost:3000/posts"+`${enteredPostData.id}`, {
             credentials: "include", 
             method: "PATCH", 
             headers: {

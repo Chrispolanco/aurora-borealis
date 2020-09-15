@@ -8,11 +8,13 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom'; 
 import postReducer from './reducers/postReducer'; 
-import currentUserReducer from './reducers/currentUserReducer'; 
+import currentUserReducer from './reducers/currentUserReducer';
+import commentReducer from './reducers/commentReducer';  
 
 const reducer = combineReducers({
   currentUserReducer, 
   postReducer, 
+  commentReducer, 
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

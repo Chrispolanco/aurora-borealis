@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CommentCard from '../comments/commentCard'
+import CommentCard from '../comments/CommentCard'
 
 class PostCard extends Component {
 
