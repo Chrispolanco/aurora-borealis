@@ -8,7 +8,7 @@ class PostContainer extends Component {
     render() {
         return(
             <div className="PostsContainer">
-                <Posts posts={this.props.posts} /> 
+                <Posts posts={this.props.posts} userLoggedIn={this.props.userLoggedIn} /> 
             </div> 
         )
     }
@@ -16,7 +16,8 @@ class PostContainer extends Component {
 
 const mapStateToProps = state => {
     return({
-      posts: state.postReducer
+        userLoggedIn: state.currentUserReducer, 
+        posts: state.postReducer
     })
 }
 export default connect(mapStateToProps)(PostContainer)

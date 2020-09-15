@@ -1,41 +1,37 @@
 import React, { Component } from 'react';
-import CommentCard from '../comments/CommentCard'
+import CommentCard from '../comments/CommentCard'; 
+import CommentForm from '../comments/CommentForm'
 
-class PostCard extends Component {
-
-    render() {
-        const { post } = this.props; 
+    const PostCard = ({ post, userLoggedIn }) => {
         const date = new Date(post.created_at).toLocaleDateString()
         return( 
             <div className="postCard"> 
                 <ul>
                     <h1>Date Submitted:</h1>
                     {date}
-                    <h6>User ID:</h6>
+                    <p>User ID:</p>
                     {post.user_id}
-                    <h6>Description:</h6>
+                    <p>Description:</p>
                     {post.description}
-                    <h6>Date:</h6>
+                    <p>Date:</p>
                     {post.date}
-                    <h6>Votes:</h6>
+                    <p>Votes:</p>
                     {post.votes}
-                    <h6>Image:</h6>
+                    <p>Image:</p>
                     {post.image} 
-                    <h6>Latitude:</h6>
+                    <p>Latitude:</p>
                     {post.latitude} 
-                    <h6>Longitude:</h6>
+                    <p>Longitude:</p>
                     {post.longitude}
                 </ul> 
-                <h6>Comments:</h6>
-                    {/* {post.comments.map(comment =>
-                        <h4> {comment.context}</h4> )} */}
+                <p>Comments:</p>
                     {post.comments.map(comment =>
-                        <CommentCard comment={comment} key={comment.id}/>)}
+                    <CommentCard comment={comment} key={comment.id}/>)}
+                <p>Comments:</p>
+                    <CommentForm post={post} userLoggedIn={userLoggedIn} />  
             </div>
         )
     }
-}; 
-
 
 
 export default PostCard; 
