@@ -14,7 +14,7 @@ export const addComment = (enteredCommentData) => {
                 post_id: enteredCommentData.post_id
             }
         }
-        return fetch("http://localhost:3000/posts/"+`${enteredCommentData.id}`, {
+        return fetch(`http://localhost:3000/posts/${enteredCommentData.post_id}`, {
             credentials: "include", 
             method: "POST", 
             headers: {
