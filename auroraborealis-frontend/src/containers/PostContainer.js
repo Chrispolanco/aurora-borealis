@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'; 
 import Posts from '../components/posts/Posts'; 
+import { deletePost } from '../actions/posts'; 
 
 class PostContainer extends Component {
 
@@ -20,4 +21,4 @@ const mapStateToProps = state => {
         posts: state.postReducer
     })
 }
-export default connect(mapStateToProps)(PostContainer)
+export default connect(mapStateToProps, { deletePost })(PostContainer)
