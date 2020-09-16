@@ -23,7 +23,8 @@ class App extends Component {
   render() {
     return(
       <div className="App"> 
-        {this.props.userLoggedIn ? <Nav userLoggedIn={this.props.userLoggedIn}/> : <Login/>}
+        <Nav/> 
+        {this.props.userLoggedIn ? <Logout/> : <Login/>}
         {/* <br></br>
         <br></br>
         {this.props.userLoggedIn ? <Logout/> : <SignUp/>}
