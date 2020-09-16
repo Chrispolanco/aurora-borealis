@@ -1,3 +1,13 @@
+body {
+  Background-Image: url('./Background/1.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-attachment: fixed; 
+  line-height: 1.5;
+  background-color: transparent;
+}
+
+
 .App {
   text-align: center;
 }

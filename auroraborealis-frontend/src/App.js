@@ -11,6 +11,7 @@ import PostContainer from './containers/PostContainer'
 import PersonalPostContainer from './containers/PersonalPostContainer';
 import PostForm from './components/posts/PostForm'; 
 import Nav from './components/user/Nav'; 
+import './App.css';
 
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
     return(
       <div className="App"> 
         <Nav/> 
-        {this.props.userLoggedIn ? <Logout/> : <Login/>}
+        {/* {this.props.userLoggedIn ? <Logout/> : <Login/>} */}
         {/* <br></br>
         <br></br>
         {this.props.userLoggedIn ? <Logout/> : <SignUp/>}
