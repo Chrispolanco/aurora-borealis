@@ -10,6 +10,7 @@ import Logout from './components/user/Logout';
 import PostContainer from './containers/PostContainer'
 import PersonalPostContainer from './containers/PersonalPostContainer';
 import PostForm from './components/posts/PostForm'; 
+import Nav from './components/user/Nav'; 
 
 
 class App extends Component {
@@ -20,11 +21,10 @@ class App extends Component {
 }
 
   render() {
-    // const { userLoggedIn, posts} = this.props
     return(
       <div className="App"> 
-        {this.props.userLoggedIn ? <Logout/> : <Login/>}
-        <br></br>
+        {this.props.userLoggedIn ? <Nav userLoggedIn={this.props.userLoggedIn}/> : <Login/>}
+        {/* <br></br>
         <br></br>
         {this.props.userLoggedIn ? <Logout/> : <SignUp/>}
         <NavLink to="/posts"><h1> All Posts</h1></NavLink>
@@ -34,7 +34,7 @@ class App extends Component {
           <Route exact path="/posts" component={ PostContainer } /> 
           <Route exact path="/personalPosts" component={ PersonalPostContainer} />
           <Route exact path="/createPost" component={ PersonalPostContainer} />
-        </Switch>
+        </Switch> */}
       </div>
     )
   }
@@ -46,5 +46,7 @@ const mapStateToProps = state => {
   })
 }
 
-
 export default connect(mapStateToProps, {getCurrentUser, fetchPosts})(App); 
+
+
+// const { userLoggedIn, posts} = this.props
