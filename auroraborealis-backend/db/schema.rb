@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2020_09_16_051943) do
     t.float "latitude"
     t.float "longitude"
     t.date "date"
+    t.text "story"
+    t.string "location"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
