@@ -8,7 +8,7 @@ const Posts = ( {posts, userLoggedIn} ) => {
     })
 
     return(
-        <div className="All_Posts">
+        <div>
             {allPosts}
         </div>
     )

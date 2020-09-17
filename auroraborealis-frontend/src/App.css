@@ -69,3 +69,17 @@ input:hover {
   font-size: 20px;
   background-color: black;
 }
+
+.postCard {
+  display: grid;
+  font-size: 20px;
+  align-items: center;
+}
+
+.postCardContainer {
+  background-color: black;
+  opacity: .80;
+  border: 2px solid gold;
+  border-radius: 8px;
+  margin: 10px;
+}

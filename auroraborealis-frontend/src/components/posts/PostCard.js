@@ -5,25 +5,15 @@ import CommentForm from '../comments/CommentForm'
 const PostCard = ({ post, userLoggedIn }) => {
     const date = new Date(post.created_at).toLocaleDateString()
     return( 
-        <div className="postCard"> 
-            <ul>
-                <h1>Date Submitted:</h1>
+        <div className="postCardContainer"> 
+                <li>Date Submitted:</li>
                 {date}
-                <p>User ID:</p>
-                {post.user_id}
-                <p>Description:</p>
-                {post.description}
-                <p>Date:</p>
-                {post.date}
-                <p>Votes:</p>
+                <li>Story:</li>
+                {post.story}
+                <li>Location:</li>
+                {post.location}
+                <li>Votes:</li>
                 {post.votes}
-                <p>Image:</p>
-                {post.image} 
-                <p>Latitude:</p>
-                {post.latitude} 
-                <p>Longitude:</p>
-                {post.longitude}
-            </ul> 
             <p>Comments:</p>
                 {post.comments.map(comment =>
                 <CommentCard comment={comment} key={comment.id}/>)}

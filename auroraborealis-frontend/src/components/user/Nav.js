@@ -22,7 +22,7 @@ const Nav = ({ userLoggedIn }) => {
                 <Route exact path="/personalPosts" component={ PersonalPostContainer} />
                 <Route exact path="/createPost" component={ PersonalPostContainer} />
                 <Route exact path="/logout" component={ Logout} />
-            </Switch> )
+            </Switch> 
         </nav>
         : 
 
