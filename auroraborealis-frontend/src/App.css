@@ -30,7 +30,7 @@ body {
 }
 
 nav {
-  display: block ;
+  display: inline-block ;
   background: transparent; 
   text-align: center; 
   color: whitesmoke;
@@ -39,6 +39,8 @@ nav {
   font-weight: normal; 
   text-align: left; 
   overflow: visible;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 
 a {
@@ -70,16 +72,15 @@ input:hover {
   background-color: black;
 }
 
-.postCard {
-  display: grid;
-  font-size: 20px;
-  align-items: center;
-}
-
 .postCardContainer {
+  display: inline-block;
   background-color: black;
   opacity: .80;
   border: 2px solid gold;
   border-radius: 8px;
   margin: 10px;
+  margin-left: 200px;
+  margin-top: 0px;
+  padding-top: 0px;
+
 }

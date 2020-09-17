@@ -13,10 +13,10 @@ const Nav = ({ userLoggedIn }) => {
     return(
         userLoggedIn ?
         <nav> 
-            <NavLink to="/posts"><h1> All Posts </h1></NavLink>
-            <NavLink to="/personalPosts"><h1> Personal Posts </h1></NavLink>
-            <NavLink to="/createPost"><h1> Create Posts </h1></NavLink>
-            <NavLink to="/logout"><h1> Logout </h1></NavLink>
+            <NavLink to="/posts"><p> All Posts </p></NavLink>
+            <NavLink to="/personalPosts"><p> Personal Posts </p></NavLink>
+            <NavLink to="/createPost"><p> Create Posts </p></NavLink>
+            <NavLink to="/logout"><p> Logout </p></NavLink>
             <Switch> 
                 <Route exact path="/posts" component={ PostContainer } /> 
                 <Route exact path="/personalPosts" component={ PersonalPostContainer} />
@@ -27,7 +27,7 @@ const Nav = ({ userLoggedIn }) => {
         : 
 
         <nav> 
-            <NavLink to="/login"><h1> Login </h1></NavLink>
+            <NavLink to="/login"><p> Login </p></NavLink>
             <Switch> 
                 <Route exact path="/login" component={ Login } />
             </Switch>
