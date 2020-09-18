@@ -9,7 +9,8 @@ const PostCard = ({ post, userLoggedIn }) => {
             <p>Votes: {post.votes}</p>
             <p>Date Submitted: {date}</p>
             <p>Location: {post.location}</p>
-            <div className="story">Story: {post.story}</div>
+            <h4>Story</h4>
+            <div className="story">{post.story}</div>
             <p>Comments:</p>
                 {post.comments.map(comment =>
                 <CommentCard comment={comment} key={comment.id}/>)}
