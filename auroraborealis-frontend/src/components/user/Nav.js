@@ -12,7 +12,7 @@ const Nav = ({ userLoggedIn }) => {
 
     return(
         userLoggedIn ?
-        <nav> 
+        <div className="navigation"> 
             <NavLink to="/posts"><p> All Posts </p></NavLink>
             <NavLink to="/personalPosts"><p> Personal Posts </p></NavLink>
             <NavLink to="/createPost"><p> Create Posts </p></NavLink>
@@ -23,15 +23,15 @@ const Nav = ({ userLoggedIn }) => {
                 <Route exact path="/createPost" component={ PersonalPostContainer} />
                 <Route exact path="/logout" component={ Logout} />
             </Switch> 
-        </nav>
+        </div>
         : 
 
-        <nav> 
+        <navigation> 
             <NavLink to="/login"><p> Login </p></NavLink>
             <Switch> 
                 <Route exact path="/login" component={ Login } />
             </Switch>
-        </nav>
+        </navigation>
     )
 }
 

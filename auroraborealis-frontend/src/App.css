@@ -1,10 +1,8 @@
 body {
   Background-Image: url('./Background/1.png');
-  background-repeat: no-repeat;
   background-size: cover; 
   background-attachment: fixed; 
-  line-height: 1.5;
-  background-color: transparent;
+  line-height: 1;
 }
 
 #header{
@@ -29,22 +27,21 @@ body {
   /* background-size: contain; */
 }
 
-nav {
-  display: inline-block ;
-  background: transparent; 
-  text-align: center; 
+.navigation {
+  display: inline-block;
   color: whitesmoke;
+  text-align: center; 
   font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: normal; 
-  text-align: left; 
   overflow: visible;
-  margin-right: 0px;
-  padding-right: 0px;
 }
 
 a {
-  color: white;
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  width: 10%;
 }
 
 a:hover {
@@ -77,10 +74,14 @@ input:hover {
   background-color: black;
   opacity: .80;
   border: 2px solid gold;
-  border-radius: 8px;
-  margin: 10px;
-  margin-left: 200px;
-  margin-top: 0px;
-  padding-top: 0px;
+  border-radius: 15px;
+  margin: 25px;
+  padding: 25px;
+  opacity: .50;
+  width: 70%;
+  height: 400px;
+}
 
+.postCardContainer:hover {
+  opacity: .90;
 }
