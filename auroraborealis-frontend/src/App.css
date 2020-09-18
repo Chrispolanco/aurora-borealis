@@ -73,12 +73,18 @@ input:hover {
   border: 4px solid gold;
   border-radius: 15px;
   margin: 25px;
-  padding: 25px;
   opacity: .40;
   width: 70%;
-  height: 400px;
+  height: 500px;
 }
 
 .postCardContainer:hover {
   opacity: .80;
+}
+
+.story {
+  overflow-y: scroll;
+  font-size: 20px;
+  width: 60%;
+  height: 100px;
 }

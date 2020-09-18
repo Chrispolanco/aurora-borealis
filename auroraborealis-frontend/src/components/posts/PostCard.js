@@ -6,14 +6,10 @@ const PostCard = ({ post, userLoggedIn }) => {
     const date = new Date(post.created_at).toLocaleDateString()
     return( 
         <div className="postCardContainer"> 
-                <li>Date Submitted:</li>
-                {date}
-                <li>Story:</li>
-                {post.story}
-                <li>Location:</li>
-                {post.location}
-                <li>Votes:</li>
-                {post.votes}
+            <p>Votes: {post.votes}</p>
+            <p>Date Submitted: {date}</p>
+            <p>Location: {post.location}</p>
+            <div className="story">Story: {post.story}</div>
             <p>Comments:</p>
                 {post.comments.map(comment =>
                 <CommentCard comment={comment} key={comment.id}/>)}
