@@ -26,12 +26,12 @@ const Nav = ({ userLoggedIn }) => {
         </div>
         : 
 
-        <navigation> 
+        <div className="navigation"> 
             <NavLink to="/login"><p> Login </p></NavLink>
             <Switch> 
                 <Route exact path="/login" component={ Login } />
             </Switch>
-        </navigation>
+        </div>
     )
 }
 
