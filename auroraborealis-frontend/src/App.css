@@ -28,9 +28,8 @@ body {
 }
 
 .navigation {
-  display: inline-block;
   color: whitesmoke;
-  text-align: center; 
+  text-align: center;
   font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: normal; 
@@ -38,7 +37,7 @@ body {
 }
 
 a {
-  display: block;
+  display: inline-block;
   color: whitesmoke;
   font-size: 20px;
   width: 10%;
