@@ -5,7 +5,7 @@ class CommentCard extends Component {
     render() {
         const { comment } = this.props; 
         return( 
-            <div className="commentCard"> 
+            <div className="comment"> 
                 <ul>
                     {comment.context}
                 </ul> 
@@ -15,3 +15,4 @@ class CommentCard extends Component {
 }; 
 
 export default CommentCard
+

@@ -32,7 +32,7 @@ class CommentForm extends Component {
             <div className="container"> 
                 <form className="context" onSubmit={this.handleOnSubmit}> 
                     <label htmlFor="context" className="innerForm">Enter Comment</label>
-                    <input type="text" name="context" onChange={this.handleOnChange} value={this.state.context}/> 
+                    <textarea type="text" name="context" onChange={this.handleOnChange} value={this.state.context}/> 
                 <button type="submit" className="button">Submit</button>
                 </form>
             </div>

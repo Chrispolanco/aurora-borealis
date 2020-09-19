@@ -66,7 +66,7 @@ input:hover {
   background-color: black;
 }
 
-.postCardContainer {
+.PostCardContainer {
   text-align: center;
   display: block;
   background-color: black;
@@ -76,11 +76,12 @@ input:hover {
   margin: auto;
   opacity: .30;
   width: 70%;
-  height: 600px;
+  height: auto;
   padding: 1%;
+  overflow-y: scroll;
 }
 
-.postCardContainer:hover {
+.PostCardContainer:hover {
   opacity: .65;
 }
 
@@ -93,4 +94,34 @@ input:hover {
 
 .story:hover {
   border: 2px solid gold;
+}
+
+.comment {
+  display: inline-block;
+  overflow-y: scroll;
+  width: 90%;
+  height: 100px;
+}
+
+.comment:hover {
+  border: 2px solid gold;
+}
+
+.PersonalPostContainer{
+  text-align: center;
+  display: block;
+  background-color: black;
+  opacity: .80;
+  border: 6px solid gold;
+  border-radius: 15px;
+  margin: auto;
+  opacity: .30;
+  width: 70%;
+  height: auto;
+  padding: 1%;
+  overflow-y: scroll;
+}
+
+.PersonalPostContainer{
+  opacity: .65;
 }

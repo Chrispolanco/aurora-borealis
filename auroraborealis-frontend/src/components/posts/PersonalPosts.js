@@ -11,7 +11,7 @@ const PersonalPosts = ({ posts, userLoggedIn }) => {
     })
 
     return(
-        <div className="Personal_Posts">
+        <div>
             {personalPost}
         </div>
     )
