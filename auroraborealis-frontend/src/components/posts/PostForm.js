@@ -7,11 +7,8 @@ class PostForm extends Component {
     constructor(props){
         super(props); 
         this.state = {
-            image: '', 
-            description: '', 
-            latitude: '', 
-            longitude: '', 
-            date: '', 
+            location: '', 
+            story: '', 
             user_id: this.props.userLoggedIn.id
         }
     }
@@ -26,11 +23,8 @@ class PostForm extends Component {
         event.preventDefault(); 
         this.props.createPost(this.state)
         this.setState({
-            image: '', 
-            description: '', 
-            latitude: '', 
-            longitude: '', 
-            date: ''
+            location: '', 
+            story: ''
         })
     }
 
@@ -38,22 +32,11 @@ class PostForm extends Component {
         return(
             <div className="container"> 
                 <form className="form" onSubmit={this.handleOnSubmit}> 
-                    <label htmlFor="image" className="innerForm">Image</label>
-                    <input type="text" name="image" onChange={this.handleOnChange} value={this.state.image}/> 
-                    <br/> 
-                    <label htmlFor="description" className="innerForm">Description</label>
-                    <input type="text" name="description" onChange={this.handleOnChange}  value={this.state.description}/> 
-                    <br/> 
-                    <label htmlFor="latitude" className="innerForm">Latitude</label>
-                    <input type="float" name="latitude" onChange={this.handleOnChange} value={this.state.latitude}/> 
-                    <br/> 
-                    <label htmlFor="longitude" className="innerForm">Longitude</label>
-                    <input type="float" name="longitude" onChange={this.handleOnChange}  value={this.state.longitude}/> 
-                    <br/> 
-                    <label htmlFor="date" className="innerForm">Date</label>
-                    <input type="date" name="date" onChange={this.handleOnChange}  value={this.state.date}/> 
-                    <br/> 
-                <button type="submit" className="button">Submit</button>
+                    <label htmlFor="location" className="InnerForm">Location</label>
+                    <input type="text" name="location" onChange={this.handleOnChange} value={this.state.location}/> 
+                    <label htmlFor="story" className="InnerForm">Story</label>
+                    <textarea type="text" name="story" onChange={this.handleOnChange}  value={this.state.story}/> 
+                <button type="submit" className="StoryButton">Submit Story</button>
                 </form>
             </div>
         )

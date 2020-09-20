@@ -19,10 +19,7 @@ body {
 }
 
 #header:hover{
-  /* Background-Image: url('./Background/2.jpg');
-  background-repeat: repeat; */
   color: gold; 
-  /* background-size: contain; */
 }
 
 .navigation {
@@ -63,7 +60,27 @@ input {
 input:hover {
   color: gold;
   font-size: 20px;
+}
+
+textarea {
+  display: block;
+  color: white;
+  font-size: 20px;
   background-color: black;
+  width: 70%;
+  margin: auto;
+  height: 350px;
+  overflow-y: scroll;
+}
+
+.InnerForm{
+  display: block;
+  font-size: 40px;
+  margin: 1%;
+}
+
+.InnerForm:hover{
+  color: gold;
 }
 
 .PostCardContainer {
@@ -110,7 +127,6 @@ input:hover {
 .DateCommentSubmitted{
   width: 10%;
   float: left;
-  text-align: center;
 }
 
 .PersonalPostContainer{
@@ -136,11 +152,12 @@ input:hover {
   font-size: 20px;
   text-align: center;
   margin: 10px;
+  overflow-y: scroll;
 }
 
 .TextAreaComment{
-  width: 65%;
-  height: 60px;
+  width: 75%;
+  height: 100px;
 }
 
 .EnterComment{
@@ -149,11 +166,18 @@ input:hover {
 }
 
 button{
+  display: inline-block;
+  margin: auto;
   font-size: 20px;
-  float: right;
 }
 
 button:hover{
   background-color: gold;
   font-weight: bolder;
+}
+
+.StoryButton{
+  float: none;
+  margin-top: 1%;
+  font-size: 25px;
 }
