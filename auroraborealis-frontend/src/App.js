@@ -36,19 +36,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {getCurrentUser, fetchPosts})(App); 
-
-
-// const { userLoggedIn, posts} = this.props
-
-        {/* {this.props.userLoggedIn ? <Logout/> : <Login/>} */}
-        {/* <br></br>
-        <br></br>
-        {this.props.userLoggedIn ? <Logout/> : <SignUp/>}
-        <NavLink to="/posts"><h1> All Posts</h1></NavLink>
-        <NavLink to="/personalPosts"><h1> Personal Posts </h1></NavLink>
-        <NavLink to="/createPost"><h1>Create Post</h1></NavLink>
-        <Switch> 
-          <Route exact path="/posts" component={ PostContainer } /> 
-          <Route exact path="/personalPosts" component={ PersonalPostContainer} />
-          <Route exact path="/createPost" component={ PersonalPostContainer} />
-        </Switch> */}

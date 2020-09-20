@@ -4,15 +4,19 @@ class CommentCard extends Component {
 
     render() {
         const { comment } = this.props; 
+        const date = new Date(comment.created_at).toLocaleDateString()
         return( 
-            <div className="comment"> 
-                <ul>
+            <div> 
+                <p className="DateCommentSubmitted"> 
+                    Date Comment Submitted:{date}
+                </p>
+
+                <p className="Comment">
                     {comment.context}
-                </ul> 
+                </p> 
             </div>
         )
     }
 }; 
 
 export default CommentCard
-

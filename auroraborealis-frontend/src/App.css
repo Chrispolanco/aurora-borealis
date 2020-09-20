@@ -96,15 +96,21 @@ input:hover {
   border: 2px solid gold;
 }
 
-.comment {
+.Comment {
   display: inline-block;
   overflow-y: scroll;
-  width: 90%;
+  width: 70%;
   height: 100px;
 }
 
-.comment:hover {
+.Comment:hover {
   border: 2px solid gold;
+}
+
+.DateCommentSubmitted{
+  width: 10%;
+  float: left;
+  text-align: center;
 }
 
 .PersonalPostContainer{
@@ -122,6 +128,32 @@ input:hover {
   overflow-y: scroll;
 }
 
-.PersonalPostContainer{
+.PersonalPostContainer:hover{
   opacity: .65;
+}
+
+.EnterCommentContainer{
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
+.TextAreaComment{
+  width: 65%;
+  height: 60px;
+}
+
+.EnterComment{
+  float: left;
+  font-size: 20px;
+}
+
+button{
+  font-size: 20px;
+  float: right;
+}
+
+button:hover{
+  background-color: gold;
+  font-weight: bolder;
 }

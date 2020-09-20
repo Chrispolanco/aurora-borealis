@@ -29,10 +29,10 @@ class CommentForm extends Component {
 
     render() {
         return(
-            <div className="container"> 
-                <form className="context" onSubmit={this.handleOnSubmit}> 
-                    <label htmlFor="context" className="innerForm">Enter Comment</label>
-                    <textarea type="text" name="context" onChange={this.handleOnChange} value={this.state.context}/> 
+            <div className="EnterCommentContainer"> 
+                <form onSubmit={this.handleOnSubmit}> 
+                    <label htmlFor="context" className="EnterComment">Enter Comment</label>
+                    <textarea className="TextAreaComment" type="text" name="context" onChange={this.handleOnChange} value={this.state.context}/> 
                 <button type="submit" className="button">Submit</button>
                 </form>
             </div>
