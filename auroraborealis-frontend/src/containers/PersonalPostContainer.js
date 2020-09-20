@@ -6,7 +6,7 @@ import PostForm from '../components/posts/PostForm';
 class PersonalPostContainer extends Component{
     render(){
         return(
-            <div className="Personal_Posts"> 
+            <div> 
                 <PersonalPosts posts={this.props.posts} userLoggedIn={this.props.userLoggedIn} /> 
                 <PostForm userLoggedIn={this.props.userLoggedIn} />
             </div>

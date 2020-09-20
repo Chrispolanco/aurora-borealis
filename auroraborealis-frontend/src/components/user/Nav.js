@@ -6,6 +6,7 @@ import Login from './Login';
 import { Route, Switch } from 'react-router-dom';
 import PostContainer from '../../containers/PostContainer'
 import PersonalPostContainer from '../../containers/PersonalPostContainer';
+import CreatePostContainer from '../../containers/CreatePostContainer';
 import '../../App.css';
 
 const Nav = ({ userLoggedIn }) => {
@@ -20,7 +21,7 @@ const Nav = ({ userLoggedIn }) => {
             <Switch> 
                 <Route exact path="/posts" component={ PostContainer } /> 
                 <Route exact path="/personalPosts" component={ PersonalPostContainer} />
-                <Route exact path="/createPost" component={ PersonalPostContainer} />
+                <Route exact path="/createPost" component={ CreatePostContainer} />
                 <Route exact path="/logout" component={ Logout} />
             </Switch> 
         </div>
