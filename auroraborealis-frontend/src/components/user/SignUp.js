@@ -33,29 +33,29 @@ class SignUp extends Component {
 
     render() {
         return(
-            <div className="Signin form">
+            <div className="SignInForm">
                 <form onSubmit = { this.handleOnSubmit }> 
                     <label htmlFor="username"> Username: </label>
                     <br/> 
-                    <input type="text" name="username" value={this.state.username} onChange={this.handleOnChange} placeholder="Username" />
+                    <input className="InnerSignInForm" type="text" name="username" value={this.state.username} onChange={this.handleOnChange} placeholder="Username" />
                     <br/> 
                     <label htmlFor="password"> Password: </label>
                     <br/> 
-                    <input type="password" name="password" value={this.state.password} onChange={this.handleOnChange} placeholder="Password" /> 
+                    <input className="InnerSignInForm" type="password" name="password" value={this.state.password} onChange={this.handleOnChange} placeholder="Password" /> 
                     <br/>
                     <label htmlFor="email"> Email: </label>
                     <br/> 
-                    <input type="email" name="email" value={this.state.email} onChange={this.handleOnChange} placeholder="Email" />
+                    <input className="InnerSignInForm" type="email" name="email" value={this.state.email} onChange={this.handleOnChange} placeholder="Email" />
                     <br/> 
                     <label htmlFor="first_name"> First Name: </label>
                     <br/> 
-                    <input type="text" name="first_name" value={this.state.first_name} onChange={this.handleOnChange} placeholder="First Name" /> 
+                    <input className="InnerSignInForm" type="text" name="first_name" value={this.state.first_name} onChange={this.handleOnChange} placeholder="First Name" /> 
                     <br/>
                     <label htmlFor="last_name"> Last Name: </label>
                     <br/> 
-                    <input type="text" name="last_name" value={this.state.last_name} onChange={this.handleOnChange} placeholder="Last Name" /> 
+                    <input className="InnerSignInForm" type="text" name="last_name" value={this.state.last_name} onChange={this.handleOnChange} placeholder="Last Name" /> 
                     <br/> 
-                    <input type="submit" value="Sign Up" /> 
+                    <button type="submit" className="button">Sign Up</button>
                 </form>
             </div> 
         )

@@ -87,12 +87,8 @@ export const createPost = (enteredPostData) => {
     return dispatch => {
         const postData = {
             post: {
-                image: enteredPostData.image, 
-                description: enteredPostData.description, 
-                votes: enteredPostData.votes, 
-                latitude: enteredPostData.latitude, 
-                longitude: enteredPostData.longitude, 
-                date: enteredPostData.date, 
+                location: enteredPostData.location, 
+                story: enteredPostData.story, 
                 user_id: enteredPostData.user_id
             }
         }
@@ -121,12 +117,8 @@ export const updatePost = (enteredPostData) => {
     return dispatch => {
         const postData = {
             post: {
-                image: enteredPostData.image, 
-                description: enteredPostData.description, 
-                votes: enteredPostData.votes, 
-                latitude: enteredPostData.latitude, 
-                longitude: enteredPostData.longitude, 
-                date: enteredPostData.date, 
+                location: enteredPostData.location, 
+                story: enteredPostData.story, 
                 user_id: enteredPostData.user_id
             }
         }

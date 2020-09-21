@@ -23,10 +23,10 @@ class SessionsController < ApplicationController
     def get_current_user
         if logged_in? 
             render json: UserSerializer.new(user).to_serialized_json 
-        # else 
-        #     render json: {
-        #         error: "Log in required"
-        #     }
+        else 
+            render json: {
+                error: "Log in or Signup"
+            }
         end 
     end 
 

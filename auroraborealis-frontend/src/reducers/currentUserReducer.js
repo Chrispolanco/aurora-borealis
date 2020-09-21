@@ -1,7 +1,7 @@
 function currentUserReducer(state=null, action) {
     switch (action.type) {
         case 'CURRENT_USER':
-            console.log("Ser Current User") 
+            console.log("Set Current User") 
             return action.user 
 
         case 'REMOVE_USER': 

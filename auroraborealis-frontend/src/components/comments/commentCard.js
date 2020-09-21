@@ -8,7 +8,7 @@ class CommentCard extends Component {
         return( 
             <div> 
                 <p className="DateCommentSubmitted"> 
-                    Date Comment Submitted:{date}
+                    {date}
                 </p>
 
                 <p className="Comment">

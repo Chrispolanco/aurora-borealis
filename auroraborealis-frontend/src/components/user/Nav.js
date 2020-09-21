@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'; 
 import Logout from './Logout'; 
 import Login from './Login'; 
+import SignUp from './SignUp'; 
 import { Route, Switch } from 'react-router-dom';
 import PostContainer from '../../containers/PostContainer'
 import PersonalPostContainer from '../../containers/PersonalPostContainer';
@@ -26,11 +27,12 @@ const Nav = ({ userLoggedIn }) => {
             </Switch> 
         </div>
         : 
-
         <div className="navigation"> 
             <NavLink to="/login"><p> Login </p></NavLink>
+            <NavLink to="/signup"><p> Sign Up </p></NavLink>
             <Switch> 
                 <Route exact path="/login" component={ Login } />
+                <Route exact path="/signup" component={ SignUp } />
             </Switch>
         </div>
     )
