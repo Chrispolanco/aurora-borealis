@@ -112,7 +112,8 @@ export const createPost = (enteredPostData) => {
                 alert(response.error)
             } else {
                 dispatch(addPost(response))
-                console.log(response)
+                dispatch(clearPosts())
+                dispatch(fetchPosts())
             }
         })
         .catch(console.log)

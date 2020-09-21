@@ -1,8 +1,9 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'; 
 import { addComment } from '../../actions/comments'; 
+import { withRouter } from 'react-router-dom'; 
 
-class CommentForm extends Component {
+class CommentForm extends React.PureComponent {
 
     constructor(props){
         super(props); 
@@ -25,6 +26,7 @@ class CommentForm extends Component {
         this.setState({
             context: ''
         })
+        this.props.history.push('/personalPosts')
     }
 
     render() {
@@ -41,4 +43,4 @@ class CommentForm extends Component {
 
 }
 
-export default connect(null, { addComment })(CommentForm)
+export default withRouter(connect(null, { addComment })(CommentForm))

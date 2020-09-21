@@ -1,8 +1,16 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'; 
 import PersonalPosts from '../components/posts/PersonalPosts'; 
+import { fetchPosts } from './../actions/posts'; 
+import { fetchComments } from './../actions/comments'; 
 
 class PersonalPostContainer extends Component{
+
+    componentDidMount() {
+        this.props.fetchPosts()
+        this.props.fetchComments()
+    }
+
     render(){
         return(
             <div> 
@@ -21,5 +29,5 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps)(PersonalPostContainer)
+export default connect(mapStateToProps, { fetchPosts, fetchComments} )(PersonalPostContainer)
   

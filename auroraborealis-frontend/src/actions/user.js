@@ -71,7 +71,7 @@ export const getCurrentUser = () => {
     }
 }
 
-export const signup = (credentials, history) => {
+export const signup = (credentials) => {
     return (dispatch) => {
         const newUser = {
             user: credentials

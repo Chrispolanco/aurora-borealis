@@ -1,3 +1,7 @@
+import { clearPosts } from './posts'; 
+import { fetchPosts } from './posts'; 
+
+
 export const addCommentConnect = comment => {
     return {
         type: "ADD_COMMENT", 
@@ -35,6 +39,8 @@ export const addComment = (enteredCommentData) => {
                 alert(response.error)
             } else {
                 dispatch(addCommentConnect(response))
+                dispatch(clearPosts())
+                dispatch(fetchPosts())
             }
         })
         .catch(console.log)
