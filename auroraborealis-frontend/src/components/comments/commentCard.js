@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CommentCard extends Component {
+class CommentCard extends React.PureComponent {
 
     render() {
         const { comment } = this.props; 

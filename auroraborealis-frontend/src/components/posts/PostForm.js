@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import { createPost } from '../../actions/posts'; 
+import { withRouter } from 'react-router-dom'; 
+
 
 class PostForm extends Component {
 
@@ -26,6 +28,7 @@ class PostForm extends Component {
             location: '', 
             story: ''
         })
+        this.props.history.push('/personalPosts')
     }
 
     render() {
@@ -44,4 +47,4 @@ class PostForm extends Component {
 
 }
 
-export default connect(null, { createPost })(PostForm)
+export default withRouter(connect(null, { createPost })(PostForm))

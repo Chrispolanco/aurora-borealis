@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import Posts from '../components/posts/Posts'; 
 
-class PostContainer extends Component {
+class PostContainer extends React.PureComponent {
 
 
     render() {
@@ -17,7 +17,8 @@ class PostContainer extends Component {
 const mapStateToProps = state => {
     return({
         userLoggedIn: state.currentUserReducer, 
-        posts: state.postReducer
+        posts: state.postReducer, 
+        comments: state.commentReducer
     })
 }
 export default connect(mapStateToProps)(PostContainer)

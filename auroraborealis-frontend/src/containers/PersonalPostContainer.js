@@ -14,10 +14,12 @@ class PersonalPostContainer extends Component{
 
 const mapStateToProps = state => {
     return({
-      userLoggedIn: state.currentUserReducer, 
-      posts: state.postReducer
+        userLoggedIn: state.currentUserReducer, 
+        posts: state.postReducer, 
+        comments: state.commentReducer
     })
 }
+
 
 export default connect(mapStateToProps)(PersonalPostContainer)
   

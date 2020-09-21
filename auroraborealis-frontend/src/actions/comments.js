@@ -5,6 +5,13 @@ export const addCommentConnect = comment => {
     }
 }
 
+export const getComments = comments => {
+    return {
+        type: "GET_COMMENTS", 
+        comments 
+    }
+}
+
 export const addComment = (enteredCommentData) => {
     return dispatch => {
         const commentData = {
@@ -34,4 +41,23 @@ export const addComment = (enteredCommentData) => {
     }
 }
 
-// `http://localhost:3000/posts/${enteredCommentData.post_id}`
+export const fetchComments = () => {
+    return (dispatch) => {
+        return fetch ("http://localhost:3000/comments", {
+            credentials: "include", 
+            method: "GET", 
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(comments => { 
+            if (comments.error){
+                alert(comments.error)
+            } else {
+                dispatch(getComments(comments))
+            }
+        })
+        .catch(console.log)
+    }
+}

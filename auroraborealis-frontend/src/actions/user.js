@@ -91,7 +91,6 @@ export const signup = (credentials, history) => {
                 console.log("Signup failed")
             } else {
                 dispatch(setCurrentUser(response))
-                history.push('/')
             }
         })
         .catch(console.log)
