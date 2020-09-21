@@ -5,6 +5,12 @@ export const getPosts = posts => {
     }
 }
 
+export const clearPosts = () => {
+    return{
+        type: "CLEAR_POSTS", 
+    }
+}
+
 export const addPost = post => {
     return {
         type: "ADD_POST", 

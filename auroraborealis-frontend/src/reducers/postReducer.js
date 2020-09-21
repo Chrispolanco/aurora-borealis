@@ -1,4 +1,6 @@
-function postReducer (state = [], action){
+const initialState = []
+
+function postReducer (state = initialState, action){
     switch(action.type) {
         case "GET_POSTS":
             return action.posts
@@ -11,6 +13,9 @@ function postReducer (state = [], action){
 
         case "UPDATE_POST": 
             return state.map(post => post.id === action.post.id ? action.post : post)
+
+        case "CLEAR_POSTS": 
+            return initialState
 
         default: 
             return state

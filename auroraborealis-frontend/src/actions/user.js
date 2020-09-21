@@ -1,3 +1,5 @@
+import { clearPosts } from './posts'; 
+
 export const setCurrentUser = user => {
     return {
         type: "CURRENT_USER", 
@@ -37,8 +39,9 @@ export const login = (credentials) => {
 }
 
 export const logout = () => {
-    return dispatch => {
+    return (dispatch) => {
         dispatch(removeCurrentUser())
+        dispatch(clearPosts())
         return fetch("http://localhost:3000/logout", {
             credentials: "include", 
             method: "DELETE"
