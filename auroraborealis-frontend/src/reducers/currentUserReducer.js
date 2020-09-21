@@ -6,7 +6,7 @@ function currentUserReducer(state=null, action) {
 
         case 'REMOVE_USER': 
             console.log("Removed User")
-            return state
+            return null
         
         default: 
             console.log("Default")

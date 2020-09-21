@@ -13,7 +13,7 @@ export const removeCurrentUser = () => {
     }
 }
 
-export const login = (credentials) => {
+export const login = (credentials, history) => {
     return(dispatch) => {
         dispatch(removeCurrentUser())
         return fetch("http://localhost:3000/login",{
@@ -31,7 +31,7 @@ export const login = (credentials) => {
                 console.log("Not Logged In")
             } else {
                 dispatch(setCurrentUser(response))
-                console.log(response)
+                history.push('/')
             }
         })
         .catch(console.log)
@@ -72,7 +72,7 @@ export const getCurrentUser = () => {
     }
 }
 
-export const signup = (credentials) => {
+export const signup = (credentials, history) => {
     return (dispatch) => {
         const newUser = {
             user: credentials
@@ -92,7 +92,7 @@ export const signup = (credentials) => {
                 console.log("Signup failed")
             } else {
                 dispatch(setCurrentUser(response))
-                console.log(response)
+                history.push('/')
             }
         })
         .catch(console.log)
