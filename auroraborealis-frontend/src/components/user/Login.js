@@ -23,6 +23,7 @@ class Login extends Component {
             username: "", 
             password: ""
         })
+        this.props.history.push('/')
     }
 
     render() {
@@ -44,4 +45,4 @@ class Login extends Component {
     }
 }
 
-export default connect(null, { login })(Login)
+export default connect(null, { login })(Login); 

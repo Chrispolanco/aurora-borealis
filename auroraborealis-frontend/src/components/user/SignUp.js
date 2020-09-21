@@ -29,6 +29,7 @@ class SignUp extends Component {
             first_name: '', 
             last_name: ''
         })
+        this.props.history.push('/')
     }
 
     render() {

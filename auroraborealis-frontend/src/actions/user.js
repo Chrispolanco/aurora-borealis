@@ -13,7 +13,7 @@ export const removeCurrentUser = () => {
     }
 }
 
-export const login = (credentials, history) => {
+export const login = (credentials) => {
     return(dispatch) => {
         dispatch(removeCurrentUser())
         return fetch("http://localhost:3000/login",{
@@ -31,7 +31,6 @@ export const login = (credentials, history) => {
                 console.log("Not Logged In")
             } else {
                 dispatch(setCurrentUser(response))
-                history.push('/')
             }
         })
         .catch(console.log)

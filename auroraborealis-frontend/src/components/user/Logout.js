@@ -8,7 +8,7 @@ const Logout = ({ logout, history }) => {
         <form onSubmit={(event) => { 
             event.preventDefault()
             logout()
-            history.push('/createPost')
+            history.push('/login')
         }
     }>
             <button type="submit" className="button">Log Out</button>
