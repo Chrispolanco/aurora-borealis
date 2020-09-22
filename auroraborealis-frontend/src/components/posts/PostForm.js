@@ -47,4 +47,4 @@ class PostForm extends Component {
 
 }
 
-export default connect(null, { createPost })(PostForm)
+export default withRouter(connect(null, { createPost })(PostForm))
