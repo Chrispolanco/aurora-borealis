@@ -68,26 +68,26 @@ export const fetchPosts = () => {
     }
 }
 
-export const deletePost = (postId) => {
-    return (dispatch) => {
-        return fetch("http://localhost:3000/posts/"+`${postId}`, {
-            credentials: "include", 
-            method: "DELETE", 
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-            .then(response => response.json())
-            .then(response => {
-                if (response.error) {
-                    alert(response.error)
-                } else {
-                    dispatch(deletePostConnect(postId))
-                }
-            })
-            .catch(console.log)
-    }
-}
+// export const deletePost = (postId) => {
+//     return (dispatch) => {
+//         return fetch("http://localhost:3000/posts/"+`${postId}`, {
+//             credentials: "include", 
+//             method: "DELETE", 
+//             headers: {
+//                 "Content-Type": "application/json"
+//             }
+//         })
+//             .then(response => response.json())
+//             .then(response => {
+//                 if (response.error) {
+//                     alert(response.error)
+//                 } else {
+//                     dispatch(deletePostConnect(postId))
+//                 }
+//             })
+//             .catch(console.log)
+//     }
+// }
 
 export const createPost = (enteredPostData) => {
     return dispatch => {
@@ -120,31 +120,31 @@ export const createPost = (enteredPostData) => {
     }
 }
 
-export const updatePost = (enteredPostData) => {
-    return dispatch => {
-        const postData = {
-            post: {
-                location: enteredPostData.location, 
-                story: enteredPostData.story, 
-                user_id: enteredPostData.user_id
-            }
-        }
-        return fetch("http://localhost:3000/posts"+`${enteredPostData.id}`, {
-            credentials: "include", 
-            method: "PATCH", 
-            headers: {
-                "Content-Type": "application/json"
-            }, 
-            body: JSON.stringify(postData)
-        })
-        .then(response => response.json())
-        .then(response => {
-            if (response.error) {
-                alert(response.error)
-            } else {
-                dispatch(updatePostConnect(response))
-            }
-        })
-        .catch(console.log)
-    }
-}
+// export const updatePost = (enteredPostData) => {
+//     return dispatch => {
+//         const postData = {
+//             post: {
+//                 location: enteredPostData.location, 
+//                 story: enteredPostData.story, 
+//                 user_id: enteredPostData.user_id
+//             }
+//         }
+//         return fetch("http://localhost:3000/posts"+`${enteredPostData.id}`, {
+//             credentials: "include", 
+//             method: "PATCH", 
+//             headers: {
+//                 "Content-Type": "application/json"
+//             }, 
+//             body: JSON.stringify(postData)
+//         })
+//         .then(response => response.json())
+//         .then(response => {
+//             if (response.error) {
+//                 alert(response.error)
+//             } else {
+//                 dispatch(updatePostConnect(response))
+//             }
+//         })
+//         .catch(console.log)
+//     }
+// }

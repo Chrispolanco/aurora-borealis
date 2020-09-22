@@ -1,5 +1,5 @@
 # About
-Auroraborealis allows to share local stories from across the globe using React Redux as the front end and a Rails API backend. It allows users to create and comment stories. In addition users need to sign up to use the application. The user will then be able to login using their username and password. 
+Auroraborealis allows users to share local stories from across the globe using React Redux as the front end and a Rails API backend. It allows users to create and comment on added stories. In addition users need to sign up to use the application. The user will then be able to login using their username and password. 
 
 # Installation
 Fork and clone repo
