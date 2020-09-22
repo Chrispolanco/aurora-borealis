@@ -9,7 +9,7 @@ const Posts = ( {posts, userLoggedIn} ) => {
 
     return(
         <div>
-            {allPosts}
+            {allPosts.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)}
         </div>
     )
 }

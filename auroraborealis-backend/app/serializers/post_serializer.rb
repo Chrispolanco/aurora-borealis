@@ -11,7 +11,7 @@ class PostSerializer
           only: [:id, :context, :post_id, :user_id, :created_at]
         }
       }, 
-      only: [:id, :image, :description, :votes, :latitude, :longitude, :date, :created_at, :story, :location, :user_id]
+      only: [:id, :votes, :created_at, :story, :location, :user_id]
     }
     @post.to_json(options)
   end 

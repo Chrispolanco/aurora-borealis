@@ -8,7 +8,7 @@ class UserSerializer < ActiveModel::Serializer
     options = {
       include: {
         posts: {
-          only: [:id, :image, :description, :votes, :latitude, :longitude, :date, :created_at, :user_id]
+          only: [:id, :votes, :latitude, :story, :location, :created_at, :user_id]
         }
       },
       except: [:updated_at, :created_at, :password_digest],

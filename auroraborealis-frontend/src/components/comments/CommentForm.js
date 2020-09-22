@@ -26,7 +26,6 @@ class CommentForm extends React.PureComponent {
         this.setState({
             context: ''
         })
-        this.props.history.push('/personalPosts')
     }
 
     render() {
