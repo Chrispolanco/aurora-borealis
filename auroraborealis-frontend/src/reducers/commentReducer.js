@@ -1,4 +1,6 @@
-function commentReducer (state = [], action){
+const initialState = []
+
+function commentReducer (state = initialState, action){
     switch(action.type) {        
 
         case "GET_COMMENTS":

@@ -70,7 +70,7 @@ export const fetchPosts = () => {
 
 // export const deletePost = (postId) => {
 //     return (dispatch) => {
-//         return fetch("http://localhost:3000/posts/"+`${postId}`, {
+//         return fetch(`http://localhost:3000/posts/"${postId}`, {
 //             credentials: "include", 
 //             method: "DELETE", 
 //             headers: {

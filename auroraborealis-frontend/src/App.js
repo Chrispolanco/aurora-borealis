@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { getCurrentUser } from './actions/user'; 
 import { connect } from 'react-redux';
