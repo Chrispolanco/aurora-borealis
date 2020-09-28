@@ -4,9 +4,9 @@ import CommentForm from '../comments/CommentForm'
 
 const PersonalPost = ({ post, userLoggedIn }) => {
     const date = new Date(post.created_at).toLocaleDateString()
-    const oneComment = post.comments.filter(comment => 
+    const filteredComment = post.comments.filter(comment => 
         comment.context.length > 0)
-    const sortedComments = oneComment.map(comment => {
+    const sortedComments = filteredComment.map(comment => {
     return <CommentCard comment={comment} key={comment.id}/>})
 
     return(
@@ -17,8 +17,8 @@ const PersonalPost = ({ post, userLoggedIn }) => {
             <h4>Story</h4>
             <div className="story">{post.story}</div>
             <p>Comments:</p>
-            {sortedComments.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)}
-            <CommentForm post={post} userLoggedIn={userLoggedIn} /> 
+                {sortedComments.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)}
+                <CommentForm post={post} userLoggedIn={userLoggedIn} /> 
         </div>
     )
 }
