@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'; 
-import { NavLink } from 'react-router-dom'; 
 import Logout from './Logout'; 
 import Login from './Login'; 
 import SignUp from './SignUp'; 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import PostContainer from '../../containers/PostContainer'
 import PersonalPostContainer from '../../containers/PersonalPostContainer';
 import CreatePostContainer from '../../containers/CreatePostContainer';
@@ -15,10 +14,10 @@ const Nav = ({ userLoggedIn }) => {
     return(
         userLoggedIn ?
         <div className="navigation"> 
-            <NavLink to="/posts"><p> All Posts </p></NavLink>
-            <NavLink to="/personalPosts"><p> Personal Posts </p></NavLink>
-            <NavLink to="/createPost"><p> Create Posts </p></NavLink>
-            <NavLink to="/logout"><p> Logout </p></NavLink>
+            <NavLink to="/posts" activeStyle={{color: 'gold'}}><p> All Posts </p></NavLink>
+            <NavLink to="/personalPosts" activeStyle={{color: 'gold'}}><p> Personal Posts </p></NavLink>
+            <NavLink to="/createPost" activeStyle={{color: 'gold'}}><p> Create Posts </p></NavLink>
+            <NavLink to="/logout" activeStyle={{color: 'gold'}}><p> Logout </p></NavLink>
             <Switch> 
                 <Route exact path="/posts" component={ PostContainer } /> 
                 <Route exact path="/personalPosts" component={ PersonalPostContainer} />
@@ -28,8 +27,8 @@ const Nav = ({ userLoggedIn }) => {
         </div>
         : 
         <div className="navigation"> 
-            <NavLink to="/login"><p> Login </p></NavLink>
-            <NavLink to="/signup"><p> Sign Up </p></NavLink>
+            <NavLink to="/login" activeStyle={{color: 'gold'}}><p> Login </p></NavLink>
+            <NavLink to="/signup" activeStyle={{color: 'gold'}}><p> Sign Up </p></NavLink>
             <Switch> 
                 <Route exact path="/login" component={ Login } />
                 <Route exact path="/signup" component={ SignUp } />
