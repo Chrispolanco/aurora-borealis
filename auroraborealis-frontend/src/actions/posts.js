@@ -68,26 +68,28 @@ export const fetchPosts = () => {
     }
 }
 
-// export const deletePost = (postId) => {
-//     return (dispatch) => {
-//         return fetch(`http://localhost:3000/posts/"${postId}`, {
-//             credentials: "include", 
-//             method: "DELETE", 
-//             headers: {
-//                 "Content-Type": "application/json"
-//             }
-//         })
-//             .then(response => response.json())
-//             .then(response => {
-//                 if (response.error) {
-//                     alert(response.error)
-//                 } else {
-//                     dispatch(deletePostConnect(postId))
-//                 }
-//             })
-//             .catch(console.log)
-//     }
-// }
+export const deletePost = (postId) => {
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/posts/${postId}`, {
+            credentials: "include", 
+            method: "DELETE", 
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => response.json())
+            .then(response => {
+                if (response.error) {
+                    alert(response.error)
+                } else {
+                    dispatch(deletePostConnect(postId))
+                    dispatch(clearPosts())
+                    dispatch(fetchPosts())
+                }
+            })
+            .catch(console.log)
+    }
+}
 
 export const createPost = (enteredPostData) => {
     return dispatch => {

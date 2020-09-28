@@ -2,7 +2,7 @@ import React from 'react';
 import CommentCard from '../comments/CommentCard'
 import CommentForm from '../comments/CommentForm'
 
-const PersonalPost = ({ post, userLoggedIn }) => {
+const PersonalPost = ({ post, userLoggedIn, deletePost }) => {
     const date = new Date(post.created_at).toLocaleDateString()
     const filteredComment = post.comments.filter(comment => 
         comment.context.length > 0)
@@ -12,6 +12,9 @@ const PersonalPost = ({ post, userLoggedIn }) => {
     return(
         <div className="PersonalPostContainer" key={post.id} > 
             {/* <p>Votes: {post.votes}</p> */}
+
+            <button onClick={() => deletePost(post.id)} >DELETE</button>
+
             <p>Date Submitted: {date}</p>
             <p>Location: {post.location}</p>
             <h4>Story</h4>

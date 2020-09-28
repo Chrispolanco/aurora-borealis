@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import PersonalPosts from '../components/posts/PersonalPosts'; 
 import { fetchPosts } from './../actions/posts'; 
 import { fetchComments } from './../actions/comments'; 
+import { deletePost } from './../actions/posts'; 
 
-class PersonalPostContainer extends Component{
+class PersonalPostContainer extends React.PureComponent {
 
     componentDidMount() {
         this.props.fetchPosts()
@@ -14,7 +15,7 @@ class PersonalPostContainer extends Component{
     render(){
         return(
             <div> 
-                <PersonalPosts posts={this.props.posts} userLoggedIn={this.props.userLoggedIn} /> 
+                <PersonalPosts posts={this.props.posts} userLoggedIn={this.props.userLoggedIn} deletePost={this.props.deletePost}/> 
             </div>
         )
     }
@@ -29,5 +30,5 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { fetchPosts, fetchComments} )(PersonalPostContainer)
+export default connect(mapStateToProps, { fetchPosts, fetchComments, deletePost} )(PersonalPostContainer)
   

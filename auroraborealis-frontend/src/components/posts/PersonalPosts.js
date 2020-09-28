@@ -1,13 +1,13 @@
 import React from 'react'; 
 import PersonalPost from './PersonalPost';  
 
-const PersonalPosts = ({ posts, userLoggedIn }) => {
+const PersonalPosts = ({ posts, userLoggedIn, deletePost }) => {
 
     const personalPosts = posts.filter(post => 
         post.user_id === userLoggedIn.id)
 
     const personalPost = personalPosts.map(post => {
-        return <PersonalPost key={post.id} post={post} userLoggedIn={userLoggedIn} />
+        return <PersonalPost key={post.id} post={post} userLoggedIn={userLoggedIn} deletePost={deletePost} />
     })
 
     return(
