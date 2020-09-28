@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CommentCard from '../comments/CommentCard'; 
 import CommentForm from '../comments/CommentForm'
 

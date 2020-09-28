@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import { getCurrentUser } from './actions/user'; 
-import { connect } from 'react-redux';
 import Nav from './components/user/Nav'; 
 
+// import { getCurrentUser } from './actions/user'; 
+// import { connect } from 'react-redux';
 
 class App extends React.PureComponent {
 
@@ -30,3 +30,4 @@ class App extends React.PureComponent {
 // export default connect(mapStateToProps, { getCurrentUser })(App); 
 
 export default App 
+
