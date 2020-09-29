@@ -3,11 +3,9 @@ import './../App.css';
 
 class Number extends Component{
 
-    constructor() {
-        super()
-        this.state = {
-          count: 0
-        }
+
+    state = {
+        count: 0
     }
      
     increment = () => {
