@@ -1,16 +1,40 @@
 import React, { Component } from 'react'; 
 import './../App.css';
 
-class Number extends React.Component{
-    
+class Number extends Component{
+
+    constructor() {
+        super()
+        this.state = {
+          count: 0
+        }
+    }
+     
+    increment = () => {
+        const newCount = this.state.count + 1
+        this.setState({
+          count: newCount
+        })
+      }
+
+    deduction = () => {
+        const newCount = this.state.count - 1
+        this.setState({
+            count: newCount
+        })
+    }
+
     render(){
         return(
             <div>
-                <div className="CounterButton">
-                    Click Me!
+                <div className="CounterButton" onClick={this.increment}>
+                    Click Me Increase!!
                 </div>
-                <div className="Number">
-                    10
+                <div className="CounterButton" onClick={this.deduction}>
+                    Click Me Decrease!!
+                </div>
+                <div className="Number" >
+                    {this.state.count}
                 </div>
             </div>
         )
