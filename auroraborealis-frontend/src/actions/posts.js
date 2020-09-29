@@ -61,14 +61,13 @@ export const fetchPosts = () => {
                 alert(posts.error)
             } else {
                 dispatch(getPosts(posts))
-                console.log(posts)
             }
         })
         .catch(console.log)
     }
 }
 
-export const deletePost = (postId) => {
+export const deletePost = (postId, history) => {
     return (dispatch) => {
         return fetch(`http://localhost:3000/posts/${postId}`, {
             credentials: "include", 
@@ -85,6 +84,7 @@ export const deletePost = (postId) => {
                     dispatch(deletePostConnect(postId))
                     dispatch(clearPosts())
                     dispatch(fetchPosts())
+                    history.push("/posts")
                 }
             })
             .catch(console.log)

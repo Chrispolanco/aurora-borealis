@@ -13,9 +13,11 @@ class PostForm extends Component {
             story: '', 
             user_id: this.props.userLoggedIn.id
         }
+
+        //this.handleOnChange = this.handleOnChange.bind(this)
     }
 
-    handleOnChange = (event) => {
+    handleOnChange = (event) =>{
         this.setState({
             [event.target.name]: event.target.value 
         })

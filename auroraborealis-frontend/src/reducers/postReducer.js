@@ -9,7 +9,6 @@ function postReducer (state = initialState, action){
             return [...state, action.post]
 
         case "DELETE_POST": 
-            // return {todos: state.todos.filter(todo => todo.id !== action.payload)}
             return state.filter(post => post.id !== action.postId)
 
         case "UPDATE_POST": 

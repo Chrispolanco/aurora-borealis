@@ -8,6 +8,7 @@ import PostContainer from '../../containers/PostContainer'
 import PersonalPostContainer from '../../containers/PersonalPostContainer';
 import CreatePostContainer from '../../containers/CreatePostContainer';
 import '../../App.css';
+import Number from '../../containers/Number'
 
 const Nav = ({ userLoggedIn }) => {
 
@@ -33,6 +34,8 @@ const Nav = ({ userLoggedIn }) => {
                 <Route exact path="/login" component={ Login } />
                 <Route exact path="/signup" component={ SignUp } />
             </Switch>
+
+            <Number/>         
         </div>
     )
 }
