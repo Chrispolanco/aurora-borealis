@@ -3,34 +3,33 @@ import './../App.css';
 
 class Number extends Component{
 
-
     state = {
         count: 0
     }
      
     increment = () => {
-        const newCount = this.state.count + 1
+        const updatedCount = this.state.count + 1
         this.setState({
-          count: newCount
+          count: updatedCount
         })
       }
 
     deduction = () => {
-        const newCount = this.state.count - 1
+        const updatedCount = this.state.count - 1
         this.setState({
-            count: newCount
+            count: updatedCount
         })
     }
 
     render(){
         return(
             <div>
-                <div className="CounterButton" onClick={this.increment}>
+                <button className="CounterButton" onClick={this.increment}> 
                     Click Me Increase!!
-                </div>
-                <div className="CounterButton" onClick={this.deduction}>
+                </button>
+                <button className="CounterButton" onClick={this.deduction} >
                     Click Me Decrease!!
-                </div>
+                </button>
                 <div className="Number" >
                     {this.state.count}
                 </div>

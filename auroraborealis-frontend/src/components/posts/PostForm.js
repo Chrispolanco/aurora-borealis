@@ -36,7 +36,7 @@ class PostForm extends Component {
     render() {
         return(
             <div className="container"> 
-                <form className="form" onSubmit={this.handleOnSubmit}> 
+                <form className="form" onSubmit={this.handleOnSubmit}>
                     <label htmlFor="location" className="InnerForm">Location</label>
                     <input type="text" name="location" onChange={this.handleOnChange} value={this.state.location}/> 
                     <label htmlFor="story" className="InnerForm">Story</label>
