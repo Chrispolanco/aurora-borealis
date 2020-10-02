@@ -8,10 +8,33 @@ class Number extends Component{
     }
      
     increment = () => {
-        const updatedCount = this.state.count + 1
-        this.setState({
-          count: updatedCount
+        // const updatedCount = this.state.count + 1
+        // this.setState({
+        //   count: updatedCount
+        // })
+
+        console.log('a')
+
+        fetch ("http://localhost:3000/postsfjdklsfjkldjlkfsds", {
+            credentials: "include", 
+            method: "GET", 
+            headers: {
+                "Content-Type": "application/json"
+            }
         })
+            .then(resp => {
+                // if(resp.status !== 200) {
+                //     throw new Error(resp.statusText);
+                // }
+                console.log('b', resp)
+                return resp.json();
+            })
+            .then(data => console.log('c', data))
+            .catch(errors => console.log('d', errors))
+
+        console.log('e');
+
+        // a, e, d
       }
 
     deduction = () => {
