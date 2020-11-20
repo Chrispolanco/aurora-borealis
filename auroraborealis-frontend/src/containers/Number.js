@@ -15,7 +15,7 @@ class Number extends Component{
 
         console.log('a')
 
-        fetch ("http://localhost:3000/postsfjdklsfjkldjlkfsds", {
+        fetch ("https://auroraborealis-api.herokuapp.com/posts", {
             credentials: "include", 
             method: "GET", 
             headers: {
