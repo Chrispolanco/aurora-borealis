@@ -1,8 +1,3 @@
-[build]
-  command = "npm run"
-  publish="auroraborealis-frontend/public"
-  base = "auroraborealis-frontend"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
