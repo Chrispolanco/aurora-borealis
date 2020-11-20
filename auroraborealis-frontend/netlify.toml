@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
-  publish="auroraborealis-frontend/build"
+  command = "npm run"
+  publish="auroraborealis-frontend/public"
   base = "auroraborealis-frontend"
 
 [[redirects]]
