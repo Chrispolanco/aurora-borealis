@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'sessions#create'
+  root 'comments#index'
 
   post "/login", to: "sessions#create"
   post "/signup", to: "users#create"
