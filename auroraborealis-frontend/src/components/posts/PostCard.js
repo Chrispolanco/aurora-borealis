@@ -1,6 +1,6 @@
 import React from 'react';
-import CommentCard from '../comments/CommentCard'; 
-import CommentForm from '../comments/CommentForm'
+import CommentCard from './CommentCard'; 
+import CommentForm from './CommentForm'
 
 const PostCard = ({ post, userLoggedIn }) => {
     const date = new Date(post.created_at).toLocaleDateString()
