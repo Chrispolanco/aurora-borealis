@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/auroraborealis-frontend/static/css/main.d9adc3e0.chunk.css",
+    "main.js": "/auroraborealis-frontend/static/js/main.1467857f.chunk.js",
+    "main.js.map": "/auroraborealis-frontend/static/js/main.1467857f.chunk.js.map",
+    "runtime-main.js": "/auroraborealis-frontend/static/js/runtime-main.2998e010.js",
+    "runtime-main.js.map": "/auroraborealis-frontend/static/js/runtime-main.2998e010.js.map",
+    "static/js/2.be18ce0f.chunk.js": "/auroraborealis-frontend/static/js/2.be18ce0f.chunk.js",
+    "static/js/2.be18ce0f.chunk.js.map": "/auroraborealis-frontend/static/js/2.be18ce0f.chunk.js.map",
+    "index.html": "/auroraborealis-frontend/index.html",
+    "precache-manifest.59f1d8fc6fafcc5aa17eaffa3c5a52a5.js": "/auroraborealis-frontend/precache-manifest.59f1d8fc6fafcc5aa17eaffa3c5a52a5.js",
+    "service-worker.js": "/auroraborealis-frontend/service-worker.js",
+    "static/css/main.d9adc3e0.chunk.css.map": "/auroraborealis-frontend/static/css/main.d9adc3e0.chunk.css.map",
+    "static/js/2.be18ce0f.chunk.js.LICENSE.txt": "/auroraborealis-frontend/static/js/2.be18ce0f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/auroraborealis-frontend/static/media/1.e3be8d24.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2998e010.js",
+    "static/js/2.be18ce0f.chunk.js",
+    "static/css/main.d9adc3e0.chunk.css",
+    "static/js/main.1467857f.chunk.js"
+  ]
+}
