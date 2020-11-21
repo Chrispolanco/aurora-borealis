@@ -1,5 +1,5 @@
 import React from 'react'; 
-// import PersonalPost from './PersonalPost';  
+import PersonalPost from './PersonalPost';  
 
 const PersonalPosts = ({ posts, userLoggedIn, deletePost, history }) => {
 
