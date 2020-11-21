@@ -1,5 +1,5 @@
 import React from 'react'; 
-// import PostCard from '../posts/PostCard'
+import PostCard from '../posts/PostCard'
 
 const Posts = ( {posts, userLoggedIn} ) => {
 
