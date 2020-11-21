@@ -6,36 +6,38 @@ class Number extends Component{
     state = {
         count: 0
     }
-     
-    increment = () => {
-        // const updatedCount = this.state.count + 1
-        // this.setState({
-        //   count: updatedCount
+    
+        // console.log('a')
+
+        // fetch ("https://auroraborealis-api.herokuapp.com/posts", {
+        //     credentials: "include", 
+        //     method: "GET", 
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
         // })
-
-        console.log('a')
-
-        fetch ("https://auroraborealis-api.herokuapp.com/posts", {
-            credentials: "include", 
-            method: "GET", 
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-            .then(resp => {
+        //     .then(resp => {
                 // if(resp.status !== 200) {
                 //     throw new Error(resp.statusText);
                 // }
-                console.log('b', resp)
-                return resp.json();
-            })
-            .then(data => console.log('c', data))
-            .catch(errors => console.log('d', errors))
+        //         console.log('b', resp)
+        //         return resp.json();
+        //     })
+        //     .then(data => console.log('c', data))
+        //     .catch(errors => console.log('d', errors))
 
-        console.log('e');
+        // console.log('e');
 
         // a, e, d
-      }
+    //   }
+
+    increment = () => {
+        const updatedCount = this.state.count + 1
+        this.setState({
+          count: updatedCount
+        })
+    }
+
 
     deduction = () => {
         const updatedCount = this.state.count - 1
