@@ -1,6 +1,6 @@
 import React from 'react'; 
-import CommentCard from '../comments/CommentCard'
-import CommentForm from '../comments/CommentForm'
+import CommentCard from './components/comments/CommentCard'
+import CommentForm from './components/comments/CommentForm'
 
 const PersonalPost = ({ post, userLoggedIn, deletePost, history }) => {
 
