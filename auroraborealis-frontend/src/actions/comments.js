@@ -25,7 +25,7 @@ export const addComment = (enteredCommentData) => {
                 post_id: enteredCommentData.post_id
             }
         }
-        return fetch(`http://localhost:3000/comments`, {
+        return fetch(` https://auroraborealis-api.herokuapp.com/comments`, {
             credentials: "include", 
             method: "POST", 
             headers: {
@@ -49,7 +49,7 @@ export const addComment = (enteredCommentData) => {
 
 export const fetchComments = () => {
     return (dispatch) => {
-        return fetch ("http://localhost:3000/comments", {
+        return fetch (" https://auroraborealis-api.herokuapp.com/comments", {
             credentials: "include", 
             method: "GET", 
             headers: {
