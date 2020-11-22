@@ -48,7 +48,7 @@ export const downVotePost = post => {
 
 export const fetchPosts = () => {
     return (dispatch) => {
-        return fetch (" https://auroraborealis-api.herokuapp.com/posts", {
+        return fetch ("https://auroraborealis-api.herokuapp.com/posts", {
             credentials: "include", 
             method: "GET", 
             headers: {
@@ -69,7 +69,7 @@ export const fetchPosts = () => {
 
 export const deletePost = (postId, history) => {
     return (dispatch) => {
-        return fetch(` https://auroraborealis-api.herokuapp.com/posts/${postId}`, {
+        return fetch(`https://auroraborealis-api.herokuapp.com/posts/${postId}`, {
             credentials: "include", 
             method: "DELETE", 
             headers: {
@@ -100,7 +100,7 @@ export const createPost = (enteredPostData) => {
                 user_id: enteredPostData.user_id
             }
         }
-        return fetch(" https://auroraborealis-api.herokuapp.com/posts", {
+        return fetch("https://auroraborealis-api.herokuapp.com/posts", {
             credentials: "include", 
             method: "POST", 
             headers: {
