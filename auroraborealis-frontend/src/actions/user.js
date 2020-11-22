@@ -52,7 +52,7 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
     return dispatch => {
-        return fetch("https://auroraborealis-api.herokuapp.com/get_current_user", {
+        return fetch("http://localhost:3000/get_current_user", {
             credentials: "include", 
             method: "GET", 
             headers: {

@@ -69,7 +69,7 @@ export const fetchPosts = () => {
 
 export const deletePost = (postId, history) => {
     return (dispatch) => {
-        return fetch(`https://auroraborealis-api.herokuapp.com/posts/${postId}`, {
+        return fetch(`https://auroraborealis-api.herokuapp.com/${postId}`, {
             credentials: "include", 
             method: "DELETE", 
             headers: {
